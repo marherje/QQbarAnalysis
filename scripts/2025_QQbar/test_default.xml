@@ -13,7 +13,7 @@
   <!--########  Global  ######################################## -->
   <global>
     <parameter name="LCIOInputFiles">
-      /data/dust/user/marquezh/QQBar_data/small_test/eL_pR/NFile
+      /data/dust/user/marquezh/QQBar_data/small_test/xPOLx/xPRODx/xNFILENAMEx
     </parameter>
     <!--parameter name="MaxRecordNumber" value="500"/-->  
     <!--parameter name="GearXMLFile" value="GearOutput.xml"/-->
@@ -151,7 +151,7 @@
 
   <processor name="DSTOutput" type="LCIOOutputProcessor">
     <!--DST output: drop all hits, skim MCParticles and keep final Tracks, Clusters and  ReconstructedParticles-->
-    <parameter name="LCIOOutputFile" type="string" > xPROD_newFileN.slcio </parameter>
+    <parameter name="LCIOOutputFile" type="string" > xPOLx_xPRODx_new_xNFILEx.slcio </parameter>
     <parameter name="LCIOWriteMode" type="string" value="WRITE_NEW"/>
     <!--parameter name="SplitFileSizekB" type="int" value="1992294"/-->
   </processor>
@@ -176,7 +176,7 @@
     <!--parameter name="NewPFOCollection" type="string" lcioInType="ReconstructedParticle"> NewPandoraPFOs </parameter-->
     <parameter name="newPandoraPFO" type="bool">false</parameter>
     <!--parameter name="Old2NewPandoraPFOsLink" type="string" lcioInType="LCRelation"> Old2NewPandoraPFOsLink </parameter-->
-    <parameter name="ROOTFileName" type="string">xPROD_newFileN.root</parameter>
+    <parameter name="ROOTFileName" type="string">xPOLx_xPRODx_new_xNFILEx.root</parameter>
     <parameter name="Rparam_jet_ps" type="float">1.25</parameter>                                                                                                                        
     <parameter name="pparam_jet_ps" type="float">1</parameter> 
     <parameter name="AnalysisType" type="int">0</parameter>
