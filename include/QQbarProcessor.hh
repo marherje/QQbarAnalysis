@@ -24,6 +24,9 @@
 #include <TFile.h>
 #include <TTree.h>
 
+//TrueJet stuff
+//#include "TrueJet_Parser.h"
+
 #include "QQbarAnalysis.hh"
 
 
@@ -33,11 +36,7 @@ using namespace marlin ;
 
 namespace QQbarProcessor 
 {
-  enum ANALYSIS_TYPE
-    {
-      QQbar = 0
-    };
-  class QQbarProcessor : public Processor 
+  class QQbarProcessor : public Processor
   {
 	  
   public:
@@ -75,22 +74,22 @@ namespace QQbarProcessor
      */
     int _type;
     std::string _hfilename;
-    ANALYSIS_TYPE _analysisType ;
+    int _analysisType ;
     std::string _colName ;
-    std::string _newcolName ; //only used if we reprocess dEdx
     std::string _MCColName ;
     std::string _JetsColName ;
     std::string _JetsRelColName ;
     std::string _colRelName;
     std::string _initialJetsColName;
+    std::string _versionPID;
     bool _boolDBDanalysis;
-    bool _newPandoraPFO;
-    std::string _Old2NewPandoraPFOsLink;
 
     float _Rparam_jet_ps;
     float _pparam_jet_ps;
 
     int _nRun ;
+
+    //    std::string get_recoMCTruthLink(){ return _colRelName; } ;
 
   } ;
 		

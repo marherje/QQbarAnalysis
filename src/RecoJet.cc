@@ -98,28 +98,28 @@ namespace QQbarProcessor
   {
     float charge = -5.0;
     if (myRecoVertices && myRecoVertices->size() > 0) 
-      {
-	charge = 0.0;
-	for (unsigned int i = 0; i < myRecoVertices->size(); i++) 
-	  {
-	    charge += myRecoVertices->at(i)->getAssociatedParticle()->getCharge();
-	  }
-	if (weight) 
-	  {
-	    charge = 0.0;
-	    for (unsigned int i = 0; i < myRecoVertices->size(); i++) 
-	      {
-		ReconstructedParticle * vtx = myRecoVertices->at(i)->getAssociatedParticle();
-		for (unsigned int j = 0; j < vtx->getParticles().size(); j++) 
-		  {
-		    float p = MathOperator::getModule(vtx->getParticles()[j]->getMomentum());
-		    charge += vtx->getParticles()[j]->getCharge() * p;
-		  }
-	      }
-	  }
+    {
+     charge = 0.0;
+     for (unsigned int i = 0; i < myRecoVertices->size(); i++) 
+     {
+       charge += myRecoVertices->at(i)->getAssociatedParticle()->getCharge();
+     }
+     if (weight) 
+     {
+       charge = 0.0;
+       for (unsigned int i = 0; i < myRecoVertices->size(); i++) 
+       {
+        ReconstructedParticle * vtx = myRecoVertices->at(i)->getAssociatedParticle();
+        for (unsigned int j = 0; j < vtx->getParticles().size(); j++) 
+        {
+          float p = MathOperator::getModule(vtx->getParticles()[j]->getMomentum());
+          charge += vtx->getParticles()[j]->getCharge() * p;
+        }
       }
-    return charge;
+    }
   }
+  return charge;
+}
   float RecoJet::GetHadronMomentum()
   {
     float momentum = -1.0;

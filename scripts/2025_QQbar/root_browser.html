@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ROOT File Viewer - JSRoot 7.9.1</title>
+    <meta charset="utf-8">
+    <script src="jsroot-7.9.1/build/jsroot.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #browser { border: 1px solid #ccc; margin-top: 20px; }
+        select { padding: 5px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h2>ROOT File Browser</h2>
+    <div>
+        <label for="fileSelect">Seleccionar archivo ROOT:</label>
+        <select id="fileSelect" onchange="loadRootFile()">
+            <option value="">-- Selecciona un archivo --</option>
+            <option value="eL_pR_2f_hadronic_new_000.root">eL_pR_2f_hadronic_new_000.root</option>
+            <option value="eL_pR_2f_hadronic_new_001.root">eL_pR_2f_hadronic_new_001.root</option>
+            <option value="eL_pR_2f_hadronic_new_002.root">eL_pR_2f_hadronic_new_002.root</option>
+            <option value="eL_pR_2f_hadronic_new_003.root">eL_pR_2f_hadronic_new_003.root</option>
+            <option value="eL_pR_2f_hadronic_new_004.root">eL_pR_2f_hadronic_new_004.root</option>
+            <option value="eL_pR_2f_hadronic_new_005.root">eL_pR_2f_hadronic_new_005.root</option>
+            <option value="eL_pR_2f_hadronic_new_006.root">eL_pR_2f_hadronic_new_006.root</option>
+            <option value="eL_pR_2f_hadronic_new_007.root">eL_pR_2f_hadronic_new_007.root</option>
+            <option value="eL_pR_2f_hadronic_new_008.root">eL_pR_2f_hadronic_new_008.root</option>
+        </select>
+    </div>
+    <br>
+    <div id="browser" style="width:100%; height:600px; border:1px solid #ccc;"></div>
+    
+    <script>
+        async function loadRootFile() {
+            const select = document.getElementById('fileSelect');
+            const filename = select.value;
+            
+            if (!filename) return;
+            
+            console.log('Cargando archivo:', filename);
+            
+            // Limpiar el contenedor
+            document.getElementById('browser').innerHTML = 'Cargando archivo ' + filename + '...';
+            
+            try {
+                // Abrir el archivo ROOT
+                const file = await JSROOT.openFile(filename);
+                console.log('Archivo cargado exitosamente');
+                
+                // Leer el directorio para ver el contenido
+                const dir = await file.readDirectory();
+                console.log('Contenido del archivo:', dir);
+                
+                // Mostrar la estructura del archivo
+                let html = '<h3>Contenido del archivo ' + filename + ':</h3>';
+                html += '<div style="max-height: 500px; overflow-y: auto;">';
+                html += '<ul style="list-style-type: none; padding-left: 0;">';
+                
+                if (dir.fKeys && dir.fKeys.length > 0) {
+                    for (let key of dir.fKeys) {
+                        html += '<li style="margin: 5px 0; padding: 5px; background: #f0f0f0; border-radius: 3px;">';
+                        html += '<strong>' + key.fName + '</strong> ';
+                        html += '<span style="color: #666;">(' + key.fClassName + ')</span>';
+                        html += '<button onclick="drawObject(\'' + filename + '\', \'' + key.fName + '\')" style="margin-left: 10px;">Ver</button>';
+                        html += '</li>';
+                    }
+                } else {
+                    html += '<li>No se encontraron objetos en el archivo</li>';
+                }
+                
+                html += '</ul></div>';
+                document.getElementById('browser').innerHTML = html;
+                
+            } catch (err) {
+                console.error('Error:', err);
+                document.getElementById('browser').innerHTML = 'Error al cargar el archivo: ' + err.message;
+            }
+        }
+        
+        async function drawObject(filename, objectName) {
+            try {
+                console.log('Dibujando objeto:', objectName, 'del archivo:', filename);
+                document.getElementById('browser').innerHTML = 'Cargando objeto ' + objectName + '...';
+                
+                const file = await JSROOT.openFile(filename);
+                const obj = await file.readObject(objectName);
+                
+                // Crear un div para el dibujo
+                document.getElementById('browser').innerHTML = '<div id="drawing" style="width:100%; height:500px;"></div>';
+                
+                // Dibujar el objeto
+                await JSROOT.draw('drawing', obj);
+                
+            } catch (err) {
+                console.error('Error al dibujar objeto:', err);
+                document.getElementById('browser').innerHTML = 'Error al dibujar ' + objectName + ': ' + err.message;
+            }
+        }
+    </script>
+</body>
+</html>

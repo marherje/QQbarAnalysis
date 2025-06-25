@@ -40,6 +40,8 @@ namespace QQbarProcessor
     EVENT::MCParticle* getMCParticle(EVENT::ReconstructedParticle *particle);
     int isOverlay(EVENT::MCParticle * mctrack);
     int getPDG(EVENT::MCParticle *mctrack);
+    int getID(EVENT::MCParticle *mctrack);
+    std::vector< EVENT::MCParticle * > getParents(EVENT::MCParticle *mctrack);
     
   private:
     //

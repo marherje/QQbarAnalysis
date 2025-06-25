@@ -14,7 +14,9 @@ SET( ${PROJECT_NAME}_VERSION_MAJOR 0 )
 SET( ${PROJECT_NAME}_VERSION_MINOR 1 )
 SET( ${PROJECT_NAME}_VERSION_PATCH 0 )
 #SET (CMAKE_CXX_STANDARD 11)
-
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 ### DEPENDENCIES ############################################################
 
@@ -80,9 +82,8 @@ ENDIF()
 ### LIBRARY #################################################################
 
 # definitions to pass to the compiler
-ADD_DEFINITIONS( "-Wall -ansi -pedantic -std=gnu++11" )
 #ADD_DEFINITIONS( "-Wall -ansi -pedantic -std=c++0x ${CMAKE_CXX_FLAGS} -g -ftest-coverage -fprofile-arcs" )
-#ADD_DEFINITIONS( "-Wall -ansi -pedantic")
+#ADD_DEFINITIONS( "-Wall -ansi -pedantic" )
 ADD_DEFINITIONS( "-Wno-long-long" )
 
 # include directories

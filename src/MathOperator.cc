@@ -131,7 +131,7 @@ namespace QQbarProcessor
 	product += direction1[i]*direction2[i];
       }
     float result = acos(product);
-    if (isnan(result)) 
+    if (std::isnan(result)) 
       {
 	if (product > 0.999) 
 	  {
@@ -170,7 +170,7 @@ namespace QQbarProcessor
 	product += direction1[i]*direction2[i];
       }
     float result = acos(product);
-    if (isnan(result)) 
+    if (std::isnan(result)) 
       {
       }
     return result;

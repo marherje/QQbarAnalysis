@@ -1,0 +1,12 @@
+list/
+log/
+myxml/
+sublog/
+tmpxml/
+old/
+data
+lcfiweights
+IsoLepWeights
+*test*
+*.pyc
+__pycache__

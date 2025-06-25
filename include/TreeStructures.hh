@@ -59,6 +59,14 @@ namespace QQbarProcessor
     float _mc_stable_jet_py[2];
     float _mc_stable_jet_pz[2];
 
+    //truejets stuff
+    float _truejet_E[5]={0};
+    float _truejet_px[5]={0};
+    float _truejet_py[5]={0};
+    float _truejet_pz[5]={0};
+    int _truejet_type[5]={0};
+    int _truejet_pdg[5]={0};
+
     //jet stuff
     float _y23;
     float _y12;
@@ -75,29 +83,43 @@ namespace QQbarProcessor
     float _principle_thrust_axis[3];
     float _sphericity_tensor[3];
 
-    float _jet_E[2];
-    float _jet_px[2];
-    float _jet_py[2];
-    float _jet_pz[2];
-    float _jet_btag[2];
-    float _jet_ctag[2];
+    float _jet_E[2]={0};
+    float _jet_px[2]={0};
+    float _jet_py[2]={0};
+    float _jet_pz[2]={0};
+    float _jet_btag[2]={0};
+    float _jet_ctag[2]={0};
+
+    int   _jet_npfo[2]={0};
+    int   _jet_nvtx[2]={0};
+
+    //vtx stuff
+    float _vtx_d0[2][10];
+    float _vtx_z0[2][10];
 
     //pfo stuff
-    int _pfo_jet_match[1000];
+    int   _pfo_jet_match[1000];
+    int   _pfo_truejet_pdg[1000];
+    int   _pfo_truejet_type[1000];
     float _pfo_E[1000];
     float _pfo_px[1000];
     float _pfo_py[1000];
     float _pfo_pz[1000];
     float _pfo_m[1000];
-    int _pfo_type[1000]; 
-    int _pfo_charge[1000];
-    int _pfo_ntracks[1000];
-    int _pfo_pdgcheat[1000];
-    int _pfo_isoverlay[1000];
-    int _pfo_isisr[1000];
-    int _pfo_vtx[1000];
+    int   _pfo_type[1000]; 
+    int   _pfo_charge[1000];
+    int   _pfo_ntracks[1000];
+    int   _pfo_pdgcheat[1000];
+    int   _pfo_pdgcheat_id[1000];
 
-    int _pfo_tpc_hits[1000];
+    int   _pfo_nparents[1000];
+    int   _pfo_pdgcheat_parent[1000][1000];
+
+    int   _pfo_isoverlay[1000];
+    int   _pfo_isisr[1000];
+    int   _pfo_vtx[1000];
+
+    int   _pfo_tpc_hits[1000];
     float _pfo_dedx[1000];
     float _pfo_dedxerror[1000];
     float _pfo_d0[1000];
@@ -112,7 +134,10 @@ namespace QQbarProcessor
     float _pfo_tanlambdaerror[1000];
     float _pfo_chi2[1000];
     float _pfo_ndf[1000];
-    int _pfo_pid[1000];
+    float _pfo_vtxpt[1000][3];
+    float _pfo_endpt[1000][3];
+
+    int   _pfo_pid[1000];
     float _pfo_pid_likelihood[1000];
     float _pfo_pid_eprob[1000];
     float _pfo_pid_muprob[1000];
@@ -120,7 +145,7 @@ namespace QQbarProcessor
     float _pfo_pid_kprob[1000];
     float _pfo_pid_pprob[1000];
     float _pfo_pid_hprob[1000];
-    int _pfo_piddedx[1000];
+    int   _pfo_piddedx[1000];
     float _pfo_piddedx_likelihood[1000];
     float _pfo_piddedx_eprob[1000];
     float _pfo_piddedx_muprob[1000];
@@ -128,26 +153,52 @@ namespace QQbarProcessor
     float _pfo_piddedx_kprob[1000];
     float _pfo_piddedx_pprob[1000];
     float _pfo_piddedx_hprob[1000];
+    float _pfo_piddedx_e_dedxdist[1000];
+    float _pfo_piddedx_mu_dedxdist[1000];
+    float _pfo_piddedx_pi_dedxdist[1000];
+    float _pfo_piddedx_k_dedxdist[1000];
+    float _pfo_piddedx_p_dedxdist[1000];
+    float _pfo_piddedx_e_lkhood[1000];
+    float _pfo_piddedx_mu_lkhood[1000];
+    float _pfo_piddedx_pi_lkhood[1000];
+    float _pfo_piddedx_k_lkhood[1000];
+    float _pfo_piddedx_p_lkhood[1000];
+
+    float _pfo_pidtof_p_at_calo[1000];
+
+    float _pfo_pidtof_closest_beta_0ps[1000];
+    float _pfo_pidtof_closest_beta_10ps[1000];
+    float _pfo_pidtof_closest_beta_50ps[1000];
+    float _pfo_pidtof_closest_beta_100ps[1000];
+    
+    float _pfo_pidtof_fastest_beta_0ps[1000];
+    float _pfo_pidtof_fastest_beta_10ps[1000];
+    float _pfo_pidtof_fastest_beta_50ps[1000];
+    float _pfo_pidtof_fastest_beta_100ps[1000];
+
+    float _pfo_pidtof_cylfit_beta_0ps[1000];
+    float _pfo_pidtof_cylfit_beta_10ps[1000];
+    float _pfo_pidtof_cylfit_beta_50ps[1000];
+    float _pfo_pidtof_cylfit_beta_100ps[1000];
+
+    float _pfo_pidtof_closestfit_beta_0ps[1000];
+    float _pfo_pidtof_closestfit_beta_10ps[1000];
+    float _pfo_pidtof_closestfit_beta_50ps[1000];
+    float _pfo_pidtof_closestfit_beta_100ps[1000];
 
     int _pfo_n;
     int _nvtx;
 
-    int _pfo_n_j1;
-    int _pfo_n_j2;
-    int _nvtx_j1;
-    int _nvtx_j2;
-
-
     void Clear()  {
 
-      for (unsigned int i = 0; i < 1000; i++) {
-	_mc_quark_ps_E[i]=0;
-	_mc_quark_ps_px[i]=0;
-	_mc_quark_ps_py[i]=0;
-	_mc_quark_ps_pz[i]=0;
-        _mc_quark_ps_m[i]=0;
-	_mc_quark_ps_pdg[i]=-1000;
-	_mc_quark_ps_charge[i]=-1000;
+      for (unsigned int i = 0; i <1000; i++) {
+				_mc_quark_ps_E[i]=0;
+				_mc_quark_ps_px[i]=0;
+				_mc_quark_ps_py[i]=0;
+				_mc_quark_ps_pz[i]=0;
+				_mc_quark_ps_m[i]=0;
+				_mc_quark_ps_pdg[i]=-1000;
+				_mc_quark_ps_charge[i]=-1000;  
       }
 
       _mc_quark_ps_n=0;
@@ -157,26 +208,26 @@ namespace QQbarProcessor
       _mc_quark_ps_d23=0;
 
       for (unsigned int i = 0; i < 2; i++) {
-	_mc_quark_E[i]=0;
-	_mc_quark_px[i]=0;
-	_mc_quark_py[i]=0;
-	_mc_quark_pz[i]=0;
-	_mc_quark_m[i]=0;
-	_mc_quark_pdg[i]=-1000;
-	_mc_quark_charge[i]=-1000;
+				_mc_quark_E[i]=0;
+				_mc_quark_px[i]=0;
+				_mc_quark_py[i]=0;
+				_mc_quark_pz[i]=0;
+				_mc_quark_m[i]=0;
+				_mc_quark_pdg[i]=-1000;
+				_mc_quark_charge[i]=-1000;
 
-	_mc_ISR_E[i]=0;
-        _mc_ISR_px[i]=0;
-        _mc_ISR_py[i]=0;
-        _mc_ISR_pz[i]=0;
-        _mc_ISR_m[i]=0; 
-        _mc_ISR_pdg[i]=-1000;
-        _mc_ISR_charge[i]=-1000;
+				_mc_ISR_E[i]=0;
+				_mc_ISR_px[i]=0;
+				_mc_ISR_py[i]=0;
+				_mc_ISR_pz[i]=0;
+				_mc_ISR_m[i]=0; 
+				_mc_ISR_pdg[i]=-1000;
+				_mc_ISR_charge[i]=-1000;
 
-	_mc_quark_ps_jet_E[i]=0;
-	_mc_quark_ps_jet_px[i]=0; 
-	_mc_quark_ps_jet_py[i]=0; 
-	_mc_quark_ps_jet_pz[i]=0; 
+				_mc_quark_ps_jet_E[i]=0;
+				_mc_quark_ps_jet_px[i]=0; 
+				_mc_quark_ps_jet_py[i]=0; 
+				_mc_quark_ps_jet_pz[i]=0; 
       }
       
       //Added by Seidai 2020.Sep.21
@@ -204,6 +255,12 @@ namespace QQbarProcessor
         _mc_stable_jet_pz[i]=0;
       }
 
+      for(int ijet=0; ijet<2; ijet++) {
+        for(int ivtx=0; ivtx<10; ivtx++){
+          _vtx_d0[ijet][ivtx] = 0;
+          _vtx_z0[ijet][ivtx] = 0;
+        }
+      }
 
       // RECONSTRUCTED EVENT
       _y12=0;
@@ -218,70 +275,114 @@ namespace QQbarProcessor
       _sphericity=0;
       
       for(int i=0; i<3; i++ ) {
-	_major_thrust_axis[i]=0;
-	_minor_thrust_axis[i]=0;
-	_principle_thrust_axis[i]=0;
-	_sphericity_tensor[i]=0;
+				_major_thrust_axis[i]=0;
+				_minor_thrust_axis[i]=0;
+				_principle_thrust_axis[i]=0;
+				_sphericity_tensor[i]=0;
       }
 
       _pfo_n=0;
       _nvtx=0;
-      _pfo_n_j1=0;
-      _nvtx_j1=0;
-      _pfo_n_j2=0;
-      _nvtx_j2=0;
 
       for(int ipfo=0; ipfo<1000; ipfo++) {  
 
-	_pfo_jet_match[ipfo]=-1;
+				_pfo_jet_match[ipfo]=-1;
+				_pfo_truejet_pdg[ipfo]=0;
+				_pfo_truejet_type[ipfo]=0;
 
-	_pfo_E[ipfo]=0; 
-	_pfo_px[ipfo]=0;
-	_pfo_py[ipfo]=0;
-	_pfo_pz[ipfo]=0;
-	_pfo_m[ipfo]=0;
-	_pfo_type[ipfo]=0;
-	_pfo_charge[ipfo]=-1000;
-        _pfo_charge[ipfo]=0;
-	_pfo_pdgcheat[ipfo]=-1000;
-	_pfo_isisr[ipfo]=-1;
-	_pfo_isoverlay[ipfo]=-1;
-	_pfo_vtx[ipfo]=-1;
-	  
-	_pfo_tpc_hits[ipfo]=0;
-	_pfo_dedx[ipfo]=0;
-	_pfo_dedxerror[ipfo]=0;
-	_pfo_d0[ipfo]=0;
-	_pfo_d0error[ipfo]=0;
-	_pfo_z0[ipfo]=0;
-	_pfo_z0error[ipfo]=0;
-	_pfo_omega[ipfo]=0;
-	_pfo_omegaerror[ipfo]=0;
-	_pfo_phi[ipfo]=0;
-	_pfo_phierror[ipfo]=0;
-	_pfo_tanlambda[ipfo]=0;
-	_pfo_tanlambdaerror[ipfo]=0;
-	_pfo_chi2[ipfo]=0;
-	_pfo_ndf[ipfo]=0;
-	
-	_pfo_pid[ipfo]=0;
-	_pfo_pid_likelihood[ipfo]=0;
-	_pfo_pid_eprob[ipfo]=0;
-	_pfo_pid_muprob[ipfo]=0;
-	_pfo_pid_piprob[ipfo]=0;
-	_pfo_pid_kprob[ipfo]=0;
-	_pfo_pid_pprob[ipfo]=0;
-	_pfo_pid_hprob[ipfo]=0;
+				_pfo_E[ipfo]=0; 
+				_pfo_px[ipfo]=0;
+				_pfo_py[ipfo]=0;
+				_pfo_pz[ipfo]=0;
+				_pfo_m[ipfo]=0;
+				_pfo_type[ipfo]=0;
+				_pfo_charge[ipfo]=-1000;
+				_pfo_pdgcheat[ipfo]=-1000;
+				_pfo_pdgcheat_id[ipfo]=-1000;
 
-	_pfo_piddedx[ipfo]=0;
-	_pfo_piddedx_likelihood[ipfo]=0;
-        _pfo_piddedx_eprob[ipfo]=0;
-        _pfo_piddedx_muprob[ipfo]=0;
-        _pfo_piddedx_piprob[ipfo]=0;
-        _pfo_piddedx_kprob[ipfo]=0;
-        _pfo_piddedx_pprob[ipfo]=0;
-        _pfo_piddedx_hprob[ipfo]=0;
+        _pfo_nparents[ipfo]=0;
+
+        for(int iparent=0; iparent<1000; iparent++) {
+                _pfo_pdgcheat_parent[ipfo][iparent]=-1000;
+        }
 	
+				_pfo_isisr[ipfo]=-1;
+				_pfo_isoverlay[ipfo]=-1;
+				_pfo_vtx[ipfo]=-1;
+
+				_pfo_tpc_hits[ipfo]=0;
+				_pfo_dedx[ipfo]=0;
+				_pfo_dedxerror[ipfo]=0;
+				_pfo_d0[ipfo]=0;
+				_pfo_d0error[ipfo]=0;
+				_pfo_z0[ipfo]=0;
+				_pfo_z0error[ipfo]=0;
+				_pfo_omega[ipfo]=0;
+				_pfo_omegaerror[ipfo]=0;
+				_pfo_phi[ipfo]=0;
+				_pfo_phierror[ipfo]=0;
+				_pfo_tanlambda[ipfo]=0;
+				_pfo_tanlambdaerror[ipfo]=0;
+				_pfo_chi2[ipfo]=0;
+				_pfo_ndf[ipfo]=0;
+
+        for(int iv=0; iv<3; iv++) {
+					_pfo_vtxpt[ipfo][iv]=0;
+					_pfo_endpt[ipfo][iv]=0;
+        }
+	
+				_pfo_pid[ipfo]=0;
+				_pfo_pid_likelihood[ipfo]=0;
+				_pfo_pid_eprob[ipfo]=0;
+				_pfo_pid_muprob[ipfo]=0;
+				_pfo_pid_piprob[ipfo]=0;
+				_pfo_pid_kprob[ipfo]=0;
+				_pfo_pid_pprob[ipfo]=0;
+				_pfo_pid_hprob[ipfo]=0;
+
+				_pfo_piddedx[ipfo]=0;
+				_pfo_piddedx_likelihood[ipfo]=0;
+				_pfo_piddedx_eprob[ipfo]=0;
+				_pfo_piddedx_muprob[ipfo]=0;
+				_pfo_piddedx_piprob[ipfo]=0;
+				_pfo_piddedx_kprob[ipfo]=0;
+				_pfo_piddedx_pprob[ipfo]=0;
+				_pfo_piddedx_hprob[ipfo]=0;
+
+				_pfo_piddedx_e_dedxdist[ipfo]=-1000.;
+				_pfo_piddedx_mu_dedxdist[ipfo]=-1000.;
+				_pfo_piddedx_pi_dedxdist[ipfo]=-1000.;
+				_pfo_piddedx_k_dedxdist[ipfo]=-1000.;
+				_pfo_piddedx_p_dedxdist[ipfo]=-1000.;
+
+				_pfo_piddedx_e_lkhood[ipfo]=0;
+				_pfo_piddedx_mu_lkhood[ipfo]=0;
+				_pfo_piddedx_pi_lkhood[ipfo]=0;
+				_pfo_piddedx_k_lkhood[ipfo]=0;
+				_pfo_piddedx_p_lkhood[ipfo]=0;
+
+				_pfo_pidtof_p_at_calo[ipfo]=-1;
+
+				_pfo_pidtof_closest_beta_0ps[ipfo]=-1.;
+				_pfo_pidtof_closest_beta_10ps[ipfo]=-1.;
+				_pfo_pidtof_closest_beta_50ps[ipfo]=-1.;
+				_pfo_pidtof_closest_beta_100ps[ipfo]=-1.;
+
+				_pfo_pidtof_fastest_beta_0ps[ipfo]=-1.;
+				_pfo_pidtof_fastest_beta_10ps[ipfo]=-1.;
+				_pfo_pidtof_fastest_beta_50ps[ipfo]=-1.;
+				_pfo_pidtof_fastest_beta_100ps[ipfo]=-1.;
+
+				_pfo_pidtof_cylfit_beta_0ps[ipfo]=-1.;
+				_pfo_pidtof_cylfit_beta_10ps[ipfo]=-1.;
+				_pfo_pidtof_cylfit_beta_50ps[ipfo]=-1.;
+				_pfo_pidtof_cylfit_beta_100ps[ipfo]=-1.;
+
+				_pfo_pidtof_closestfit_beta_0ps[ipfo]=-1.;
+				_pfo_pidtof_closestfit_beta_10ps[ipfo]=-1.;
+				_pfo_pidtof_closestfit_beta_50ps[ipfo]=-1.;
+				_pfo_pidtof_closestfit_beta_100ps[ipfo]=-1.;
+
       }
       
     }//end clear

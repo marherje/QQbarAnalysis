@@ -54,7 +54,7 @@ void observable::dEdx(int n_entries=-1, TString process="",bool secondary=false,
   Long64_t nentries;
   if(n_entries>0) nentries= n_entries;
   else nentries= fChain->GetEntriesFast();
-
+  std::cout<<nentries<<std::endl;
   Long64_t nbytes = 0, nb = 0;
   for (Long64_t jentry=0; jentry<nentries;jentry++) {
     Long64_t ientry = LoadTree(jentry);
@@ -91,7 +91,7 @@ void observable::dEdx(int n_entries=-1, TString process="",bool secondary=false,
 	    if(angular_correction==true) {
 	      dedx=dedx*pow(TMath::ACos(fabs(costheta)),0.05);
 	    }
-	    if( pfo_istrack[ipfo]==1) {
+	    if( pfo_ntracks[ipfo]==1 && fabs(pfo_ntracks[ipfo])!=0) {
 	      
 	      if( fabs(pfo_pdgcheat[ipfo])==321 ){
 		nkaonjet++;
@@ -468,14 +468,4 @@ void observable::dEdx(int n_entries=-1, TString process="",bool secondary=false,
 
   
    
-
-
-bool observable::PreSelection(int type=0,float Kvcut=25) {
-  
-  if(jet_E[0]<0.5 || jet_E[1]<0.5) return false;
-  if(type == 0 ) return true;
-
-
-  return false;
-}
 

@@ -1,11 +1,25 @@
 <marlin>
 
+ <constants>
+    <!-- ***** Global constant for reconstruction ***** -->
+    <!-- The lcgeo directory where to look for the ILD model -->
+    <constant name="productionfolder" value="/cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production" />
+    <constant name="PidPDFFile" value="${productionfolder}/HighLevelReco/PIDFiles/LikelihoodPID_Standard_l5_v01.root" />
+    <constant name="PidWeightFiles">${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_02GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_03GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_04GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_05GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_06GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_07GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_08GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_09GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_10GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_11GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_12GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_13GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_14GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_15GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_16GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_17GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_18GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_19GeVP_clusterinfo.weights.xml ${productionfolder}/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_20GeVP_clusterinfo.weights.xml</constant>
+    <constant name="StartFolder" value="/data/dust/user/marquezh/QQbarAnalysis2025/scripts/2025_QQbar"/>
+ </constants>
+
   <!--########  Execute  ######################################## -->
   <execute>
-    <processor name="InitDD4hep"/>
-    <processor name="JetClusteringAndFlavorTag"/>
-    <processor name="MySphere"/>
+    <processor name="InitDD4hep"/>    
+    <processor name="MyCorrect_Compute_dEdxProcessor"/>  <!-- Angular correction of dEdx-->
+    <!-- <processor name="MyIsolatedLeptonTaggingProcessor"/> -->
+    <processor name="MyLikelihoodPID" /><!-- Recalculate the dEdxPID with new track info and corrected Bette-Bloch curves-->
+    <processor name="JetClusteringAndFlavorTag"/><!-- Default flavor tagging-, but using dEdx info -->
+    <processor name="MySphere"/> <!-- event shapes, reco lvel -->
     <processor name="MyThrustReconstruction"/>
+    <processor name="MyTrueJet"/>  <!-- TrueJet processor, by Mikael-->
+    <!--processor name="FourJetClustering"/> < REconstruct the event in 34 jets, to be used later for WW filtering -->
     <processor name="MyQQbarProcessor"/>
     <!--processor name="DSTOutput"/-->
   </execute>
@@ -15,8 +29,7 @@
     <parameter name="LCIOInputFiles">
       /data/dust/user/marquezh/QQBar_data/small_test/xPOLx/xPRODx/xNFILENAMEx
     </parameter>
-    <!--parameter name="MaxRecordNumber" value="500"/-->  
-    <!--parameter name="GearXMLFile" value="GearOutput.xml"/-->
+    <parameter name="AllowToModifyEvent" value="true" />  
     <parameter name="SkipNEvents" value="0"/>
     <parameter name="SupressCheck" value="false"/>
     <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> SILENT </parameter>
@@ -30,12 +43,66 @@
     </parameter>
   </processor>
 
+  <processor name="MyIsolatedLeptonTaggingProcessor" type="IsolatedLeptonTaggingProcessor">
+  <!--IsolatedLeptonTaggingProcessor does whatever it does ...-->
+    <!--cosine of the larger cone-->
+    <parameter name="CosConeLarge" type="float">0.95 </parameter>
+    <!--cosine of the smaller cone-->
+    <parameter name="CosConeSmall" type="float">0.98 </parameter>
+    <!--Cut on the mva output of isolated electron selection-->
+    <parameter name="CutOnTheISOElectronMVA" type="float">0.8 </parameter>
+    <!--Cut on the mva output of isolated muon selection-->
+    <parameter name="CutOnTheISOMuonMVA" type="float">0.8 </parameter>
+    <!--Directory of Weights for the Isolated Electron MVA Classification-->
+    <parameter name="DirOfISOElectronWeights" type="string"> IsoLepWeights/isolated_electron_weights_woIP </parameter>
+    <!--Directory of Weights for the Isolated Muon MVA Classification-->
+    <parameter name="DirOfISOMuonWeights" type="string"> IsoLepWeights/isolated_muon_weights_woIP_woYoke </parameter>
+    <!--Name of the PandoraPFOs collection-->
+    <parameter name="InputPandoraPFOsCollection" type="string" lcioInType="ReconstructedParticle">PandoraPFOs </parameter>
+    <!--Name of the Primary Vertex collection-->
+    <parameter name="InputPrimaryVertexCollection" type="string" lcioInType="ReconstructedParticle">PrimaryVertex </parameter>
+    <!--flag to select one most like isolated lepton-->
+    <parameter name="IsSelectingOneIsoLep" type="bool">true </parameter>
+    <!--Maximum d0 significance for electron-->
+    <parameter name="MaxD0SigForElectron" type="float">50 </parameter>
+    <!--Maximum D0 significance for muon-->
+    <parameter name="MaxD0SigForMuon" type="float">20 </parameter>
+    <!--Maximum ratio of energy in calorimeters over momentum for electron-->
+    <parameter name="MaxEOverPForElectron" type="float">1.3 </parameter>
+    <!--Maximum ratio of energy in calorimeters over momentum for muon-->
+    <parameter name="MaxEOverPForMuon" type="float">0.3 </parameter>
+    <!--Maximum Z0 significance for electron-->
+    <parameter name="MaxZ0SigForElectron" type="float">50 </parameter>
+    <!--Maximum Z0 significance for muon-->
+    <parameter name="MaxZ0SigForMuon" type="float">20 </parameter>
+    <!--minimum ratio of energy in calorimeters over momentum for electron-->
+    <parameter name="MinEOverPForElectron" type="float">0.5 </parameter>
+    <!--minimum ratio of energy in ecal over energy in ecal+hcal-->
+    <parameter name="MinEecalOverTotEForElectron" type="float">0.9 </parameter>
+    <!--Minimum momentum for electron-->
+    <parameter name="MinPForElectron" type="float">5 </parameter>
+    <!--Minimum momentum for muon-->
+    <parameter name="MinPForMuon" type="float">5 </parameter>
+    <!--Name of collection with the selected isolated lepton-->
+    <parameter name="OutputIsoLeptonsCollection" type="string" lcioOutType="ReconstructedParticle">ISOLeptons </parameter>
+    <!--Name of the new PFOs collection without isolated lepton-->
+    <parameter name="OutputPFOsWithoutIsoLepCollection" type="string" lcioOutType="ReconstructedParticle">PandoraPFOsWithoutIsoLep </parameter>
+    <!--use yoke for muon ID-->
+    <parameter name="UseYokeForMuonID" type="bool">false </parameter>
+    <!--use impact parameters-->
+    <parameter name="UseIP" type="bool">false </parameter>
+    <!--verbosity level of this processor ("DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT")-->
+    <!--parameter name="Verbosity" type="string">DEBUG </parameter-->
+  </processor>
+
   <processor name="JetClusteringAndFlavorTag" type="LcfiplusProcessor">
     <!-- run primary and secondary vertex finders -->
-    <parameter name="Algorithms" type="stringVec"> JetClustering JetVertexRefiner FlavorTag ReadMVA</parameter>
+    <parameter name="Algorithms" type="stringVec"> JetClustering JetVertexRefiner FlavorTag ReadMVA</parameter>    
     
     <!-- general parameters -->
+    <!-- PandoraPFOsWithoutIsoLep -->
     <parameter name="PFOCollection" type="string" value="PandoraPFOs" /> <!-- input PFO collection -->
+    <parameter name="PIDAlgorithmName" type="string" value="dEdxPIDv2" />
     <parameter name="UseMCP" type="int" value="0" /> <!-- MC info not used -->
     <parameter name="MCPCollection" type="string" value="" /> <!-- not used -->
     <parameter name="MCPFORelation" type="string" value="" /> <!-- not used -->
@@ -52,7 +119,7 @@
     <parameter name="JetClustering.JetAlgorithm" type="string" value="ValenciaVertex" /> <!-- jet algorithm -->
     <parameter name="JetClustering.UseBeamJets" type="int" value="1" /> <!-- beam jet rejection -->
     <parameter name="JetClustering.BetaParameter" type="double" value="1.0" />
-    <parameter name="JetClustering.RParameter" type="double" value="1.17" />
+    <parameter name="JetClustering.RParameter" type="double" value="1.0" />
     <parameter name="JetClustering.GammaParameter" type="double" value="0" />
     
     <parameter name="JetClustering.UseMuonID" type="int" value="1" /> <!-- jet-muon ID for jet clustering -->
@@ -87,21 +154,21 @@
     <parameter name="JetVertexRefiner.minz0sigSingle" type="double" value="5." />
     <parameter name="JetVertexRefiner.OneVertexProbThreshold" type="double" value="0.001" />
     <parameter name="JetVertexRefiner.MaxCharmFlightLengthPerJetEnergy" type="double" value="0.1" />
-    
-    
+
 
     <!-- FlavorTag parameters -->
     <parameter name="PrimaryVertexCollectionName" type="string" value="PrimaryVertex" />
     <parameter name="FlavorTag.JetCollectionName" type="string" value="RefinedJets" />
     <parameter name="MakeNtuple.AuxiliaryInfo" type="int" value="-1" />
-    
-    <parameter name="FlavorTag.WeightsDirectory" type="string" value="lcfiweights"/>    <!-- e.g. lcfiweights/lcfiweights_6q500_v04_p00_ildl5 --> 
+    <parameter name="FlavorTag.WeightsDirectory" type="string" value="${StartFolder}/lcfiweights/"/>    <!-- e.g. lcfiweights/lcfiweights_6q500_v04_p00_ildl5 --> 
     <parameter name="FlavorTag.WeightsPrefix" type="string" value="2q250_v04_p00_ildl5" />         <!-- e.g. 6q500_v04_p00_ildl5 -->
     <parameter name="FlavorTag.BookName" type="string" value="bdt" />
     <parameter name="FlavorTag.PIDAlgo" type="string" value="lcfiplus" />
-    <parameter name="FlavorTag.D0ProbFileName" type="string" value="data/vtxprob/d0probv2_ildl5_2q250_vvH.root"/> <!-- vtxprob/d0probv2_ildl5_6q500.root -->
-    <parameter name="FlavorTag.Z0ProbFileName" type="string" value="data/vtxprob/z0probv2_ildl5_2q250_vvH.root"/> <!-- vtxprob/z0probv2_ildl5_6q500.root --> 
-    
+    <parameter name="FlavorTag.D0ProbFileName" type="string" value="${StartFolder}/data/vtxprob/d0probv2_ildl5_2q250_vvH.root"/> <!-- vtxprob/d0probv2_ildl5_6q500.root -->
+    <parameter name="FlavorTag.Z0ProbFileName" type="string" value="${StartFolder}/data/vtxprob/z0probv2_ildl5_2q250_vvH.root"/> <!-- vtxprob/z0probv2_ildl5_6q500.root --> 
+    <parameter name="FlavorTag.DEDXGaussianWidth" type="double" value="0.5" /> <!-- Gaussian width (sigmas) in KDS distributions -->
+    <parameter name="FlavorTag.DEDXMinMomentum" type="double" value="3" /> <!-- Min Momentum in KDS distributions -->
+    <parameter name="FlavorTag.DEDXMaxAngle" type="double" value="0.95" /> <!-- Max |cos(theta)| in KDS distributions -->
     <parameter name="FlavorTag.CategoryDefinition1" type="string">nvtx==0</parameter>
     <parameter name="FlavorTag.CategoryPreselection1" type="string">trk1d0sig!=0</parameter>
     <parameter name="FlavorTag.CategoryVariables1" type="stringVec">
@@ -151,9 +218,10 @@
 
   <processor name="DSTOutput" type="LCIOOutputProcessor">
     <!--DST output: drop all hits, skim MCParticles and keep final Tracks, Clusters and  ReconstructedParticles-->
-    <parameter name="LCIOOutputFile" type="string" > xPOLx_xPRODx_new_xNFILEx.slcio </parameter>
+    <parameter name="LCIOOutputFile" type="string" >
+    <!-- OUTPUT.slcio -->
+    </parameter>
     <parameter name="LCIOWriteMode" type="string" value="WRITE_NEW"/>
-    <!--parameter name="SplitFileSizekB" type="int" value="1992294"/-->
   </processor>
 
   <processor name="MySphere" type="Sphere">
@@ -161,26 +229,76 @@
     <parameter name="r_value" type="float"> 2.0 </parameter>
   </processor>
 
-  <processor name="MySelectReconstructedParticle" type="SelectReconstructedParticle"> 
-    <parameter name="inputCollectionName" type="string"> RefinedJets </parameter>
-  </processor>
   <processor name="MyThrustReconstruction" type="ThrustReconstruction">  
-    <parameter name="inputCollectionName" type="string"> PandoraPFOs </parameter> 
+    <parameter name="inputCollectionName" type="string"> RefinedJets </parameter> 
   </processor>
+
+  <processor name="MyCorrect_Compute_dEdxProcessor" type="AngularCorrection_dEdxProcessor">
+    <!-- description not set by author -->
+    <!--parameter for new angular correction dedx= uncorrected_dedx  / f, with f= pol3(theta)-->
+    <parameter name="AngularCorrectionParameters" type="FloatVec"> 0.970205 0.0007506 4.41781e-8 5.8222e-8 </parameter>
+    <!--LDC track collection name-->
+    <parameter name="LDCTrackCollection" type="string" lcioInType="Track">MarlinTrkTracks </parameter>
+    <!--parameters used in the outdated angular correction outdated_dedx= uncorrected_dedx / f, with f = 1. / ( 1.0+[1]*cos(theta)*cos(theta)/[0] )-->
+    <parameter name="Write_dEdx" type="bool">true </parameter>
+  </processor>
+
+  <!-- Post reconstruction related : PID, Vertexing, Particle finding, cluster topology -->
+  <processor name="MyLikelihoodPID" type="LikelihoodPIDProcessor">
+    <!--Performs particle identification-->
+    <!--Debugging?-->
+    <parameter name="Debug" type="int">0</parameter>
+    <!--Boundaries for energy binning-->
+    <parameter name="EnergyBoundaries" type="FloatVec">0 1.0e+07</parameter>
+    <!--Name of files containing pdfs for charged particles-->
+    <parameter name="FilePDFName" type="StringVec"> ${PidPDFFile} </parameter>
+    <!--Whether MVA low momentum mu/pi is used or not-->
+    <parameter name="UseLowMomentumMuPiSeparation" type="bool">true</parameter>
+    <!--The BDTG weights files for low momentum mu/pi separation-->
+    <parameter name="FileWeightFormupiSeparationName" type="StringVec">${PidWeightFiles}</parameter>
+    <!--dE/dx parameters for each particle-->
+    <parameter name="dEdxParameter_electron" type="FloatVec"> -0.00232937 -3.88424e+13 -37881.1 -1.56837 0 </parameter>
+    <parameter name="dEdxParameter_muon" type="FloatVec"> 0.0717375 -16596.5 -4.84028e+07 0.356728 0.000371431 </parameter>
+    <parameter name="dEdxParameter_pion" type="FloatVec"> 0.0733683 51678.4 8.19644e+07 0.453505 0.000404984 </parameter>
+    <parameter name="dEdxParameter_kaon" type="FloatVec"> 0.0792784 3798.12 4.06952e+07 0.450671 0.00050169 </parameter>
+    <parameter name="dEdxParameter_proton" type="FloatVec"> 0.0770318 1053.24 4.95076e+06 0.281489 0.000168616 </parameter>
+    <parameter name="dEdxNormalization" type="float">1.350e-7</parameter>
+    <!--dE/dx error factor(7.55 for l5, 8.53 for s5)-->
+    <parameter name="dEdxErrorFactor" type="float">7.55</parameter>
+    <!-- Method: Maximum Likelihood(0), Bayesian(1), or risk based Bayesian(2)-->
+    <parameter name="UseBayesian" type="int">2</parameter>
+    <!-- Cost Matrix for risk based Bayesian(2)-->
+    <parameter name="CostMatrix" type="FloatVec">1.0e-50 1.0 1.5 1.0 1.5 1.0 1.0e-50 3.0 1.0 1.0 1.0 1.0 1.0e-50 1.0 3.0 1.0 1.0 4.0 1.0e-50 2.0 1.0 1.0 5.0 1.0 1.0e-50</parameter>
+    <!--Version to be added to the name of the calculated methods-->
+    <parameter name="PIDMethodsToRun_version" type="string"> v2 </parameter>
+    <!--Name of the PFO collection-->
+    <parameter name="RecoParticleCollection" type="string"> PandoraPFOs </parameter>
+    <!-- PandoraPFOsWithoutIsoLep -->
+  </processor> 
+
+  <processor name="MyTrueJet" type="TrueJet">
+  </processor> 
+
+  <processor name="FourJetClustering" type="FastJetProcessor">
+    <parameter name="algorithm" type="StringVec"> ee_genkt_algorithm 1.25 1</parameter>             
+    <parameter name="clusteringMode" type="StringVec"> ExclusiveNJets 4 </parameter>
+    <parameter name="recombinationScheme" type="string"> E_scheme </parameter>
+    <parameter name="recParticleIn" type="string" lcioInType="ReconstructedParticle"> PandoraPFOsWithoutIsoLep </parameter>
+    <parameter name="jetOut" type="string" lcioOutType="ReconstructedParticle">FourJets </parameter>
+ </processor>
 
   <processor name="MyQQbarProcessor" type="QQbarProcessor">
     <parameter name="JetCollectionName" type="string" lcioInType="Vertex"> RefinedJets </parameter>
     <parameter name="JetRelCollectionName" type="string" lcioInType="Vertex"> RefinedJets_rel </parameter>
     <parameter name="MCCollectionName" type="string" lcioInType="MCParticle"> MCParticlesSkimmed</parameter>
+    <!-- PandoraPFOsWithoutIsoLep -->
     <parameter name="PFOCollection" type="string" lcioInType="ReconstructedParticle"> PandoraPFOs </parameter>  
-    <!--parameter name="NewPFOCollection" type="string" lcioInType="ReconstructedParticle"> NewPandoraPFOs </parameter-->
-    <parameter name="newPandoraPFO" type="bool">false</parameter>
-    <!--parameter name="Old2NewPandoraPFOsLink" type="string" lcioInType="LCRelation"> Old2NewPandoraPFOsLink </parameter-->
-    <parameter name="ROOTFileName" type="string">xPOLx_xPRODx_new_xNFILEx.root</parameter>
-    <parameter name="Rparam_jet_ps" type="float">1.25</parameter>                                                                                                                        
+    <parameter name="ROOTFileName" type="string"> xPOLx_xPRODx_new_xNFILEx.root </parameter>
+    <parameter name="Rparam_jet_ps" type="float">1.5708</parameter>                                                                                                                        
     <parameter name="pparam_jet_ps" type="float">1</parameter> 
-    <parameter name="AnalysisType" type="int">0</parameter>
+    <parameter name="AnalysisType" type="int"> xANATYPEx </parameter>
     <parameter name="DBDanalysis" type="bool">false</parameter>
+    <parameter name="PIDVersionTag" type="string"> v2 </parameter><!--This one is the one used for the dEdxdistance analysis -->
   </processor>
 
 </marlin>
