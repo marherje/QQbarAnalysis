@@ -27,7 +27,7 @@
   <!--########  Global  ######################################## -->
   <global>
     <parameter name="LCIOInputFiles">
-      /data/dust/user/marquezh/QQBar_data/small_test/xPOLx/xPRODx/xNFILENAMEx
+      xFULLFILENAMEx
     </parameter>
     <parameter name="AllowToModifyEvent" value="true" />  
     <parameter name="SkipNEvents" value="0"/>
@@ -293,10 +293,10 @@
     <parameter name="MCCollectionName" type="string" lcioInType="MCParticle"> MCParticlesSkimmed</parameter>
     <!-- PandoraPFOsWithoutIsoLep -->
     <parameter name="PFOCollection" type="string" lcioInType="ReconstructedParticle"> PandoraPFOs </parameter>  
-    <parameter name="ROOTFileName" type="string"> xPOLx_xPRODx_new_xNFILEx.root </parameter>
+    <parameter name="ROOTFileName" type="string"> xPROCx_xPOLx_xPRODx_new_xNFILEx.root </parameter>
     <parameter name="Rparam_jet_ps" type="float">1.5708</parameter>                                                                                                                        
     <parameter name="pparam_jet_ps" type="float">1</parameter> 
-    <parameter name="AnalysisType" type="int"> xANATYPEx </parameter>
+    <parameter name="AnalysisType" type="int"> xANATYPEx </parameter><!-- 0 for 2f_hadronic, -1 for backgrounds -->
     <parameter name="DBDanalysis" type="bool">false</parameter>
     <parameter name="PIDVersionTag" type="string"> v2 </parameter><!--This one is the one used for the dEdxdistance analysis -->
   </processor>

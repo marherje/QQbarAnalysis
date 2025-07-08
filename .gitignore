@@ -1,3 +1,2 @@
-build.sh
 build/
-src/QQbarProcessor.cc
+scripts/2025_QQbar/NTuples
