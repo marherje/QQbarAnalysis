@@ -32,7 +32,7 @@
     <parameter name="AllowToModifyEvent" value="true" />  
     <parameter name="SkipNEvents" value="0"/>
     <parameter name="SupressCheck" value="false"/>
-    <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> SILENT </parameter>
+    <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> ERROR0 </parameter>
     <parameter name="RandomSeed" value="1234567890" />
   </global>
 
@@ -98,7 +98,8 @@
   <processor name="JetClusteringAndFlavorTag" type="LcfiplusProcessor">
     <!-- run primary and secondary vertex finders -->
     <parameter name="Algorithms" type="stringVec"> JetClustering JetVertexRefiner FlavorTag ReadMVA</parameter>    
-    
+    <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> ERROR0 </parameter>
+
     <!-- general parameters -->
     <!-- PandoraPFOsWithoutIsoLep -->
     <parameter name="PFOCollection" type="string" value="PandoraPFOs" /> <!-- input PFO collection -->
@@ -299,6 +300,7 @@
     <parameter name="AnalysisType" type="int"> xANATYPEx </parameter><!-- 0 for 2f_hadronic, -1 for backgrounds -->
     <parameter name="DBDanalysis" type="bool">false</parameter>
     <parameter name="PIDVersionTag" type="string"> v2 </parameter><!--This one is the one used for the dEdxdistance analysis -->
+    <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> ERROR0 </parameter>
   </processor>
 
 </marlin>

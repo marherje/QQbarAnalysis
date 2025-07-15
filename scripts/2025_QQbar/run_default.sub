@@ -7,4 +7,6 @@ output                  = outfile_xPROCx_xPOLx_xPRODx_xNFILEx.txt
 error                   = errors_xPROCx_xPOLx_xPRODx_xNFILEx.txt
 should_transfer_files   = Yes
 when_to_transfer_output = ON_EXIT
++MaxRuntime             = 86400
++JobMaxVacateTime       = 60
 queue 1
