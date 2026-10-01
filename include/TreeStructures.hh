@@ -89,6 +89,19 @@ namespace QQbarProcessor
     float _jet_pz[2]={0};
     float _jet_btag[2]={0};
     float _jet_ctag[2]={0};
+    float _jet_cattag[2]={0};
+    //ParT 11-category probabilities
+    float _jet_ParT_b[2]={0};
+    float _jet_ParT_c[2]={0};
+    float _jet_ParT_s[2]={0};
+    float _jet_ParT_u[2]={0};
+    float _jet_ParT_d[2]={0};
+    float _jet_ParT_bbar[2]={0};
+    float _jet_ParT_cbar[2]={0};
+    float _jet_ParT_sbar[2]={0};
+    float _jet_ParT_ubar[2]={0};
+    float _jet_ParT_dbar[2]={0};
+    float _jet_ParT_g[2]={0};
 
     int   _jet_npfo[2]={0};
     int   _jet_nvtx[2]={0};
@@ -164,6 +177,12 @@ namespace QQbarProcessor
     float _pfo_piddedx_k_lkhood[1000];
     float _pfo_piddedx_p_lkhood[1000];
 
+    float _pfo_cpid_e[1000];
+    float _pfo_cpid_mu[1000];
+    float _pfo_cpid_pi[1000];
+    float _pfo_cpid_k[1000];
+    float _pfo_cpid_p[1000];
+
     float _pfo_pidtof_p_at_calo[1000];
 
     float _pfo_pidtof_closest_beta_0ps[1000];
@@ -188,6 +207,11 @@ namespace QQbarProcessor
 
     int _pfo_n;
     int _nvtx;
+
+    int _pfo_n_j1;
+    int _pfo_n_j2;
+    int _jet_nvtx_j1;
+    int _jet_nvtx_j2;
 
     void Clear()  {
 
@@ -283,6 +307,10 @@ namespace QQbarProcessor
 
       _pfo_n=0;
       _nvtx=0;
+      _pfo_n_j1=0;
+      _jet_nvtx_j1=0;
+      _pfo_n_j2=0;
+      _jet_nvtx_j2=0;
 
       for(int ipfo=0; ipfo<1000; ipfo++) {  
 
@@ -360,6 +388,12 @@ namespace QQbarProcessor
 				_pfo_piddedx_pi_lkhood[ipfo]=0;
 				_pfo_piddedx_k_lkhood[ipfo]=0;
 				_pfo_piddedx_p_lkhood[ipfo]=0;
+
+        _pfo_cpid_e[ipfo]=0;
+        _pfo_cpid_mu[ipfo]=0;
+        _pfo_cpid_pi[ipfo]=0;
+        _pfo_cpid_k[ipfo]=0;
+        _pfo_cpid_p[ipfo]=0;
 
 				_pfo_pidtof_p_at_calo[ipfo]=-1;
 

@@ -12,48 +12,91 @@ namespace QQbarProcessor
     LCRelationNavigator navigator(jetrelcol);
     PIDHandler pidh(jetcol);
     int alid = -1;
+    int ParT_id = -1;
     try
       {
-	alid = pidh.getAlgorithmID("vtxrec");
+	    alid = pidh.getAlgorithmID("vtxrec");
       }
     catch(UTIL::UnknownAlgorithm &e)
       {
-	streamlog_out(DEBUG) << "No algorithm vtxrec!\n";
-	alid = -1;
+	    streamlog_out(DEBUG) << "No algorithm vtxrec!\n";
+	    alid = -1;
       }
     if (alid < 0) 
-      {
-	try
+    {
+	    try
+	    {
+	      alid = pidh.getAlgorithmID("lcfiplus");
+	    }
+	    catch(UTIL::UnknownAlgorithm &e)
+	    {
+	      streamlog_out(DEBUG) << "No algorithm lcfiplus!\n";
+	      alid = -1;
+	    }	
+    }
+    try
 	  {
-	    alid = pidh.getAlgorithmID("lcfiplus");
+	    ParT_id = pidh.getAlgorithmID("weaver");
 	  }
-	catch(UTIL::UnknownAlgorithm &e)
+	  catch(UTIL::UnknownAlgorithm &e)
 	  {
-	    streamlog_out(DEBUG) << "No algorithm lcfiplus!\n";
-	    alid = -1;
-	  }
-			
-      }
+	    streamlog_out(DEBUG) << "No algorithm weaver!\n";
+	    ParT_id = -1;
+	  }	
+
     streamlog_out(DEBUG) << "Algorithm id: " << jetnumber << "\n";
+    streamlog_out(DEBUG) << "Algorithm alid: " << alid << "\n";
+    streamlog_out(DEBUG) << "Algorithm ParT_id: " << ParT_id << "\n";
     for (int j = 0; j < jetnumber; j++) 
       {
-	ReconstructedParticle * jetpart = dynamic_cast< ReconstructedParticle * >(jetcol->getElementAt(j));
-	vector< Vertex * > * vertices = convert(navigator.getRelatedToObjects(jetpart));
-	const vector< ReconstructedParticle * > components = jetpart->getParticles();
-	int nvtx = vertices->size();
-	float btag = 0.0;
-	float ctag = 0.0;
-	if (alid > -1) 
-	  {
-	    const ParticleID& pid = pidh.getParticleID(jetpart,alid);
-	    vector<float> params = pid.getParameters();
-	    btag = params[pidh.getParameterIndex(alid,"BTag")];
-	    ctag = params[pidh.getParameterIndex(alid,"CTag")];
-	  }
-	RecoJet * jet = new RecoJet(jetpart, btag, ctag, nvtx);
-	jet->SetRecoVertices(vertices);
-	PrintJet(jet);
-	result->push_back(jet);
+	      ReconstructedParticle * jetpart = dynamic_cast< ReconstructedParticle * >(jetcol->getElementAt(j));
+	      vector< Vertex * > * vertices = convert(navigator.getRelatedToObjects(jetpart));
+	      const vector< ReconstructedParticle * > components = jetpart->getParticles();
+	      int nvtx = vertices->size();
+	      float btag = 0.0;
+	      float ctag = 0.0;
+        float cattag = -1.0;
+        // 11-categories ParT
+        float ParT_b = 0.0;
+        float ParT_c = 0.0;
+        float ParT_s = 0.0;
+        float ParT_u = 0.0;
+        float ParT_d = 0.0;
+        float ParT_bbar = 0.0;
+        float ParT_cbar = 0.0;
+        float ParT_sbar = 0.0;
+        float ParT_ubar = 0.0;
+        float ParT_dbar = 0.0;
+        float ParT_g = 0.0;
+
+	      if (alid > -1) 
+	      {
+	        const ParticleID& pid = pidh.getParticleID(jetpart,alid);
+	        vector<float> params = pid.getParameters();
+	        btag = params[pidh.getParameterIndex(alid,"BTag")];
+	        ctag = params[pidh.getParameterIndex(alid,"CTag")];
+          cattag = params[pidh.getParameterIndex(alid,"Category")];
+	      }
+        if (ParT_id > -1) 
+        {
+          const ParticleID& pid = pidh.getParticleID(jetpart,ParT_id);
+          vector<float> params = pid.getParameters();
+          ParT_b = params[pidh.getParameterIndex(ParT_id,"mc_b")];
+          ParT_c = params[pidh.getParameterIndex(ParT_id,"mc_c")];
+          ParT_s = params[pidh.getParameterIndex(ParT_id,"mc_s")];
+          ParT_u = params[pidh.getParameterIndex(ParT_id,"mc_u")];
+          ParT_d = params[pidh.getParameterIndex(ParT_id,"mc_d")];
+          ParT_bbar = params[pidh.getParameterIndex(ParT_id,"mc_bbar")];
+          ParT_cbar = params[pidh.getParameterIndex(ParT_id,"mc_cbar")];
+          ParT_sbar = params[pidh.getParameterIndex(ParT_id,"mc_sbar")];
+          ParT_ubar = params[pidh.getParameterIndex(ParT_id,"mc_ubar")];
+          ParT_dbar = params[pidh.getParameterIndex(ParT_id,"mc_dbar")];
+          ParT_g = params[pidh.getParameterIndex(ParT_id,"mc_g")];
+        }
+	      RecoJet * jet = new RecoJet(jetpart, btag, ctag, cattag, nvtx, ParT_b, ParT_c, ParT_s, ParT_u, ParT_d, ParT_bbar, ParT_cbar, ParT_sbar, ParT_ubar, ParT_dbar, ParT_g);
+	      jet->SetRecoVertices(vertices);
+	      PrintJet(jet);
+	      result->push_back(jet);
       }
     return result;
 		

@@ -1,0 +1,15 @@
+momabs lambda dEdx_RCD_elDis dEdx_RCD_muDis dEdx_RCD_piDis dEdx_RCD_kaDis dEdx_RCD_prDis TOF50_mass2 Pandora_PandoraPDG 
+211 321 2212 | 
+
+3 4.01817 TMVA_BDT_MC_12bins/weights/TMVA_BDT_MC_0.weights.xml
+4.01817 5.38188 TMVA_BDT_MC_12bins/weights/TMVA_BDT_MC_1.weights.xml
+5.38188 7.20843 TMVA_BDT_MC_12bins/weights/TMVA_BDT_MC_2.weights.xml
+7.20843 9.65489 TMVA_BDT_MC_12bins/weights/TMVA_BDT_MC_3.weights.xml
+9.65489 12.9317 TMVA_BDT_MC_12bins/weights/TMVA_BDT_MC_4.weights.xml
+12.9317 17.3205 TMVA_BDT_MC_12bins/weights/TMVA_BDT_MC_5.weights.xml
+17.3205 23.1989 TMVA_BDT_MC_12bins/weights/TMVA_BDT_MC_6.weights.xml
+23.1989 31.0723 TMVA_BDT_MC_12bins/weights/TMVA_BDT_MC_7.weights.xml
+31.0723 41.6179 TMVA_BDT_MC_12bins/weights/TMVA_BDT_MC_8.weights.xml
+41.6179 55.7426 TMVA_BDT_MC_12bins/weights/TMVA_BDT_MC_9.weights.xml
+55.7426 74.6609 TMVA_BDT_MC_12bins/weights/TMVA_BDT_MC_10.weights.xml
+74.6609 100 TMVA_BDT_MC_12bins/weights/TMVA_BDT_MC_11.weights.xml

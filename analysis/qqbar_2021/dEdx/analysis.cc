@@ -4,10 +4,10 @@
 #include "TApplication.h"
 
 int analysis(TString file, TString output, bool ignoreoverlay, bool angularcorrection){
-
+  // /data/dust/user/marquezh/QQbar250_NTuples/Standard/Big/2f_hadronic/eL_pR/merged_2f_eLpR.root
   cout<< " "<<endl;
   cout<< file << endl;
-  TString folder="/mnt/HardDrive/cernbox_hd/QQbar/processor_output_2021/";
+  TString folder="/data/dust/user/marquezh/QQbar250_NTuples/Standard/Big/2f_hadronic/eL_pR/";
   file=folder+file;
   observable ss3(file);
   ss3.dEdx(-1,output,true,ignoreoverlay,angularcorrection);

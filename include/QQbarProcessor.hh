@@ -82,6 +82,7 @@ namespace QQbarProcessor
     std::string _colRelName;
     std::string _initialJetsColName;
     std::string _versionPID;
+    std::string _CPIDname;
     bool _boolDBDanalysis;
 
     float _Rparam_jet_ps;

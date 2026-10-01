@@ -70,7 +70,7 @@ void dEdxplots() {
   gStyle->SetPadLeftMargin(0.2);
 
  
-  TString filename = "../output_250_secondaries_250GeV_mc2020-15162_eL_lcfi_VVB1.17_2021.root";//output_250_all_250GeV_mc2020-15162_eL_lcfi_VVB1.17_norestorer.root";//"../output_250_all_250GeV_DBD_eL_norestorer.root";
+  TString filename = "/data/dust/user/marquezh/QQbarAnalysis2025/analysis/qqbar_2021/dEdx/output_250_all_tracks_ignoreoverlay_angularcorrection_000.root";//output_250_all_250GeV_mc2020-15162_eL_lcfi_VVB1.17_norestorer.root";//"../output_250_all_250GeV_DBD_eL_norestorer.root";
 //output_250_all_250GeV_mc2020-15162_eL_lcfi_VVB1.17_norestorer.root";
 //output_250_all_250GeV_DBD_eL_norestorer.root";
   //output_250_all_250GeV_mc2020-15162_eL_lcfi_VVB1.17_norestorer.root";//output_250_all_250GeV_mc2020-15161_eL_lcfi_VVB1.17_norestorer.root";//output_250_all_250GeV_DBD_eL_norestorer.root";
@@ -212,6 +212,10 @@ void dEdxplots() {
   leg1->SetShadowColor(0);
   leg1->Draw();
 
+  c_dEdx_truth_0->SaveAs("dEdx_vs_momentum.png");
+  c_dEdx_truth_0->SaveAs("dEdx_vs_momentum.eps");
+  std::cout << "Saved dEdx_vs_momentum.png and dEdx_vs_momentum.eps" << std::endl;
+
   
   TCanvas* c_proj = new TCanvas("c_proj","c_proj",800,800);
   c_dEdx_truth_0->cd(1);
@@ -250,6 +254,11 @@ void dEdxplots() {
   leg2->SetShadowColor(0);
   leg2->Draw();
   
+  c_proj->SaveAs("separation_power.png");
+  c_proj->SaveAs("separation_power.eps");
+  std::cout << "Saved separation_power.png and separation_power.eps" << std::endl;
+
+  f->Close();
    
 
 }

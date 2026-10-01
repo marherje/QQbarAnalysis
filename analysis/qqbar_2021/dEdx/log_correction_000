@@ -1,0 +1,40 @@
+
+Processing analysis.cc("2f_hadronic_eL_pR_00015273_new_000.root","000",true,true)...
+ 
+2f_hadronic_eL_pR_00015273_new_000.root
+15200
+ FCN=1.41183 FROM MINOS     STATUS=SUCCESSFUL     12 CALLS          83 TOTAL
+                     EDM=1.2872e-18    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           9.28526e-02   4.87784e-03  -1.23130e-09   6.51579e-09
+   2  p1           2.03810e-02   1.66564e-03   1.66564e-03   7.21378e-08
+eff_input>0.45:     purity=0.940104 eff=0.456418;    slope=0.020381 upper=0.0933404 lower=0.0835847
+eff_input>0.5:     purity=0.933126 eff=0.509509;    slope=0.020381 upper=0.094316 lower=0.0835847
+eff_input>0.55:     purity=0.927495 eff=0.551902;    slope=0.020381 upper=0.094316 lower=0.0816336
+eff_input>0.6:     purity=0.920078 eff=0.609746;    slope=0.020381 upper=0.0952916 lower=0.0821214
+eff_input>0.65:     purity=0.911729 eff=0.655309;    slope=0.020381 upper=0.0952916 lower=0.0796825
+eff_input>0.7:     purity=0.904117 eff=0.702456;    slope=0.020381 upper=0.0957793 lower=0.0787069
+eff_input>0.75:     purity=0.896063 eff=0.754754;    slope=0.020381 upper=0.0962671 lower=0.0748046
+eff_input>0.8:     purity=0.883951 eff=0.802298;    slope=0.020381 upper=0.0972427 lower=0.0767557
+eff_input>0.85:     purity=0.874651 eff=0.850238;    slope=0.020381 upper=0.0977305 lower=0.0728535
+eff_input>0.9:     purity=0.860149 eff=0.903724;    slope=0.020381 upper=0.098706 lower=0.073829
+eff_input>0.95:     purity=0.847211 eff=0.951664;    slope=0.020381 upper=0.0991938 lower=0.0704146
+15200
+ FCN=0.904879 FROM MINOS     STATUS=SUCCESSFUL     12 CALLS         113 TOTAL
+                     EDM=2.44368e-20    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           9.31357e-02   5.28080e-03   5.09743e-10   4.91048e-10
+   2  p1           2.00420e-02   1.81838e-03   1.81838e-03  -7.13030e-09
+eff_input>0.45:     purity=0.777066 eff=0.452757;    slope=0.020042 upper=0.0968323 lower=0.0873268
+eff_input>0.5:     purity=0.770064 eff=0.506288;    slope=0.020042 upper=0.0968323 lower=0.0857426
+eff_input>0.55:     purity=0.760104 eff=0.558529;    slope=0.020042 upper=0.0978884 lower=0.0857426
+eff_input>0.6:     purity=0.751715 eff=0.611093;    slope=0.020042 upper=0.0989446 lower=0.0857426
+eff_input>0.65:     purity=0.741257 eff=0.659303;    slope=0.020042 upper=0.0994727 lower=0.0857426
+eff_input>0.7:     purity=0.731371 eff=0.701064;    slope=0.020042 upper=0.0989446 lower=0.0825741
+eff_input>0.75:     purity=0.721793 eff=0.751693;    slope=0.020042 upper=0.100001 lower=0.0831022
+eff_input>0.8:     purity=0.708191 eff=0.805063;    slope=0.020042 upper=0.100001 lower=0.0804618
+eff_input>0.85:     purity=0.696815 eff=0.850371;    slope=0.020042 upper=0.101057 lower=0.0815179
+eff_input>0.9:     purity=0.683655 eff=0.901645;    slope=0.020042 upper=0.101057 lower=0.0788775
+eff_input>0.95:     purity=0.668749 eff=0.955015;    slope=0.020042 upper=0.101585 lower=0.0788775

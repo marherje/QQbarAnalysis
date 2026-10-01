@@ -14,7 +14,9 @@
     <processor name="InitDD4hep"/>    
     <processor name="MyCorrect_Compute_dEdxProcessor"/>  <!-- Angular correction of dEdx-->
     <!-- <processor name="MyIsolatedLeptonTaggingProcessor"/> -->
-    <processor name="MyLikelihoodPID" /><!-- Recalculate the dEdxPID with new track info and corrected Bette-Bloch curves-->
+    
+    <processor name="MyLikelihoodPID"/> <!-- Recalculate the dEdxPID with new track info and corrected Bette-Bloch curves-->
+    <!--<processor name="myCheatdEdxDist"/>-->
     <processor name="JetClusteringAndFlavorTag"/><!-- Default flavor tagging-, but using dEdx info -->
     <processor name="MySphere"/> <!-- event shapes, reco lvel -->
     <processor name="MyThrustReconstruction"/>
@@ -32,7 +34,7 @@
     <parameter name="AllowToModifyEvent" value="true" />  
     <parameter name="SkipNEvents" value="0"/>
     <parameter name="SupressCheck" value="false"/>
-    <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> ERROR0 </parameter>
+    <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> ERROR </parameter>
     <parameter name="RandomSeed" value="1234567890" />
   </global>
 
@@ -41,6 +43,59 @@
     <parameter name="DD4hepXMLFile" type="string">
       /cvmfs/ilc.desy.de/sw/x86_64_gcc131_el9/v02-03-04/lcgeo/v00-21/ILD/compact/ILD_l5_o1_v02/ILD_l5_o1_v02.xml
     </parameter>
+  </processor>
+
+  <processor name="MyCorrect_Compute_dEdxProcessor" type="AngularCorrection_dEdxProcessor">
+    <!-- description not set by author -->
+    <!--parameter for new angular correction dedx= uncorrected_dedx  / f, with f= pol3(theta)-->
+    <parameter name="AngularCorrectionParameters" type="FloatVec"> 0.970205 0.0007506 4.41781e-8 5.8222e-8 </parameter>
+    <!--LDC track collection name-->
+    <parameter name="LDCTrackCollection" type="string" lcioInType="Track">MarlinTrkTracks </parameter>
+    <!--parameters used in the outdated angular correction outdated_dedx= uncorrected_dedx / f, with f = 1. / ( 1.0+[1]*cos(theta)*cos(theta)/[0] )-->
+    <parameter name="Write_dEdx" type="bool">true </parameter>
+  </processor>
+
+  <!-- Post reconstruction related : PID, Vertexing, Particle finding, cluster topology -->
+  <processor name="MyLikelihoodPID" type="LikelihoodPIDProcessor">
+    <!--Performs particle identification-->
+    <!--Debugging?-->
+    <parameter name="Debug" type="int">0</parameter>
+    <!--Boundaries for energy binning-->
+    <parameter name="EnergyBoundaries" type="FloatVec">0 1.0e+07</parameter>
+    <!--Name of files containing pdfs for charged particles-->
+    <parameter name="FilePDFName" type="StringVec"> ${PidPDFFile} </parameter>
+    <!--Whether MVA low momentum mu/pi is used or not-->
+    <parameter name="UseLowMomentumMuPiSeparation" type="bool">true</parameter>
+    <!--The BDTG weights files for low momentum mu/pi separation-->
+    <parameter name="FileWeightFormupiSeparationName" type="StringVec">${PidWeightFiles}</parameter>
+    <!--dE/dx parameters for each particle-->
+    <parameter name="dEdxParameter_electron" type="FloatVec"> -0.00232937 -3.88424e+13 -37881.1 -1.56837 0 </parameter>
+    <parameter name="dEdxParameter_muon" type="FloatVec"> 0.0717375 -16596.5 -4.84028e+07 0.356728 0.000371431 </parameter>
+    <parameter name="dEdxParameter_pion" type="FloatVec"> 0.0733683 51678.4 8.19644e+07 0.453505 0.000404984 </parameter>
+    <parameter name="dEdxParameter_kaon" type="FloatVec"> 0.0792784 3798.12 4.06952e+07 0.450671 0.00050169 </parameter>
+    <parameter name="dEdxParameter_proton" type="FloatVec"> 0.0770318 1053.24 4.95076e+06 0.281489 0.000168616 </parameter>
+    <parameter name="dEdxNormalization" type="float">1.350e-7</parameter>
+    <!--dE/dx error factor(7.55 for l5, 8.53 for s5)-->
+    <parameter name="dEdxErrorFactor" type="float">7.55</parameter>
+    <!-- Method: Maximum Likelihood(0), Bayesian(1), or risk based Bayesian(2)-->
+    <parameter name="UseBayesian" type="int">2</parameter>
+    <!-- Cost Matrix for risk based Bayesian(2)-->
+    <parameter name="CostMatrix" type="FloatVec">1.0e-50 1.0 1.5 1.0 1.5 1.0 1.0e-50 3.0 1.0 1.0 1.0 1.0 1.0e-50 1.0 3.0 1.0 1.0 4.0 1.0e-50 2.0 1.0 1.0 5.0 1.0 1.0e-50</parameter>
+    <!--Version to be added to the name of the calculated methods-->
+    <parameter name="PIDMethodsToRun_version" type="string"> v2 </parameter>
+    <!--Name of the PFO collection-->
+    <parameter name="RecoParticleCollection" type="string"> PandoraPFOs </parameter>
+    <!-- PandoraPFOsWithoutIsoLep -->
+  </processor> 
+
+  <processor name="myCheatdEdxDist" type="CheatdEdxDist">  
+    <parameter name="PFOCollection" type="string" lcioInType="ReconstructedParticle"> PandoraPFOs </parameter>
+    <parameter name="MCCollection" type="string" lcioInType="MCParticle"> MCParticlesSkimmed </parameter>
+    <parameter name="MCRelCollectionName" type="string" lcioInType="ReconstructedParticle"> RecoMCTruthLink </parameter>
+    <parameter name="improvement" type="float"> 0.99 </parameter>
+    <parameter name="versionPID_nominal" type="string"> v2 </parameter>
+    <parameter name="methodstorun_version" type="string"> v3 </parameter>
+    <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> ERROR </parameter>
   </processor>
 
   <processor name="MyIsolatedLeptonTaggingProcessor" type="IsolatedLeptonTaggingProcessor">
@@ -234,59 +289,8 @@
     <parameter name="inputCollectionName" type="string"> RefinedJets </parameter> 
   </processor>
 
-  <processor name="MyCorrect_Compute_dEdxProcessor" type="AngularCorrection_dEdxProcessor">
-    <!-- description not set by author -->
-    <!--parameter for new angular correction dedx= uncorrected_dedx  / f, with f= pol3(theta)-->
-    <parameter name="AngularCorrectionParameters" type="FloatVec"> 0.970205 0.0007506 4.41781e-8 5.8222e-8 </parameter>
-    <!--LDC track collection name-->
-    <parameter name="LDCTrackCollection" type="string" lcioInType="Track">MarlinTrkTracks </parameter>
-    <!--parameters used in the outdated angular correction outdated_dedx= uncorrected_dedx / f, with f = 1. / ( 1.0+[1]*cos(theta)*cos(theta)/[0] )-->
-    <parameter name="Write_dEdx" type="bool">true </parameter>
-  </processor>
-
-  <!-- Post reconstruction related : PID, Vertexing, Particle finding, cluster topology -->
-  <processor name="MyLikelihoodPID" type="LikelihoodPIDProcessor">
-    <!--Performs particle identification-->
-    <!--Debugging?-->
-    <parameter name="Debug" type="int">0</parameter>
-    <!--Boundaries for energy binning-->
-    <parameter name="EnergyBoundaries" type="FloatVec">0 1.0e+07</parameter>
-    <!--Name of files containing pdfs for charged particles-->
-    <parameter name="FilePDFName" type="StringVec"> ${PidPDFFile} </parameter>
-    <!--Whether MVA low momentum mu/pi is used or not-->
-    <parameter name="UseLowMomentumMuPiSeparation" type="bool">true</parameter>
-    <!--The BDTG weights files for low momentum mu/pi separation-->
-    <parameter name="FileWeightFormupiSeparationName" type="StringVec">${PidWeightFiles}</parameter>
-    <!--dE/dx parameters for each particle-->
-    <parameter name="dEdxParameter_electron" type="FloatVec"> -0.00232937 -3.88424e+13 -37881.1 -1.56837 0 </parameter>
-    <parameter name="dEdxParameter_muon" type="FloatVec"> 0.0717375 -16596.5 -4.84028e+07 0.356728 0.000371431 </parameter>
-    <parameter name="dEdxParameter_pion" type="FloatVec"> 0.0733683 51678.4 8.19644e+07 0.453505 0.000404984 </parameter>
-    <parameter name="dEdxParameter_kaon" type="FloatVec"> 0.0792784 3798.12 4.06952e+07 0.450671 0.00050169 </parameter>
-    <parameter name="dEdxParameter_proton" type="FloatVec"> 0.0770318 1053.24 4.95076e+06 0.281489 0.000168616 </parameter>
-    <parameter name="dEdxNormalization" type="float">1.350e-7</parameter>
-    <!--dE/dx error factor(7.55 for l5, 8.53 for s5)-->
-    <parameter name="dEdxErrorFactor" type="float">7.55</parameter>
-    <!-- Method: Maximum Likelihood(0), Bayesian(1), or risk based Bayesian(2)-->
-    <parameter name="UseBayesian" type="int">2</parameter>
-    <!-- Cost Matrix for risk based Bayesian(2)-->
-    <parameter name="CostMatrix" type="FloatVec">1.0e-50 1.0 1.5 1.0 1.5 1.0 1.0e-50 3.0 1.0 1.0 1.0 1.0 1.0e-50 1.0 3.0 1.0 1.0 4.0 1.0e-50 2.0 1.0 1.0 5.0 1.0 1.0e-50</parameter>
-    <!--Version to be added to the name of the calculated methods-->
-    <parameter name="PIDMethodsToRun_version" type="string"> v2 </parameter>
-    <!--Name of the PFO collection-->
-    <parameter name="RecoParticleCollection" type="string"> PandoraPFOs </parameter>
-    <!-- PandoraPFOsWithoutIsoLep -->
-  </processor> 
-
   <processor name="MyTrueJet" type="TrueJet">
   </processor> 
-
-  <processor name="FourJetClustering" type="FastJetProcessor">
-    <parameter name="algorithm" type="StringVec"> ee_genkt_algorithm 1.25 1</parameter>             
-    <parameter name="clusteringMode" type="StringVec"> ExclusiveNJets 4 </parameter>
-    <parameter name="recombinationScheme" type="string"> E_scheme </parameter>
-    <parameter name="recParticleIn" type="string" lcioInType="ReconstructedParticle"> PandoraPFOsWithoutIsoLep </parameter>
-    <parameter name="jetOut" type="string" lcioOutType="ReconstructedParticle">FourJets </parameter>
- </processor>
 
   <processor name="MyQQbarProcessor" type="QQbarProcessor">
     <parameter name="JetCollectionName" type="string" lcioInType="Vertex"> RefinedJets </parameter>
@@ -300,7 +304,18 @@
     <parameter name="AnalysisType" type="int"> xANATYPEx </parameter><!-- 0 for 2f_hadronic, -1 for backgrounds -->
     <parameter name="DBDanalysis" type="bool">false</parameter>
     <parameter name="PIDVersionTag" type="string"> v2 </parameter><!--This one is the one used for the dEdxdistance analysis -->
-    <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> ERROR0 </parameter>
+    <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> ERROR </parameter>
   </processor>
+
+
+  <processor name="FourJetClustering" type="FastJetProcessor">
+    <parameter name="algorithm" type="StringVec"> ee_genkt_algorithm 1.25 1</parameter>             
+    <parameter name="clusteringMode" type="StringVec"> ExclusiveNJets 4 </parameter>
+    <parameter name="recombinationScheme" type="string"> E_scheme </parameter>
+    <parameter name="recParticleIn" type="string" lcioInType="ReconstructedParticle"> PandoraPFOsWithoutIsoLep </parameter>
+    <parameter name="jetOut" type="string" lcioOutType="ReconstructedParticle">FourJets </parameter>
+  </processor>
+
+  
 
 </marlin>

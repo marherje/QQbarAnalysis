@@ -82,6 +82,11 @@ namespace QQbarProcessor
 				"version of the PID Method to use (v1, v2, ...) , empty by default.",
 				_versionPID,
 				std::string("") );
+
+	registerProcessorParameter( "CPIDname",
+				"name of the CPID collection name, empty by default.",
+				_CPIDname,
+				std::string("") );
     
     registerProcessorParameter( "Rparam_jet_ps",
 				"R parameter of the ee_gentkt algorithm (for parton + shower analysis)",
@@ -121,6 +126,7 @@ namespace QQbarProcessor
 				_JetsRelColName ,
 				_MCColName,
 				_versionPID,
+				_CPIDname,
 				_Rparam_jet_ps,
 				_pparam_jet_ps,
 				_analysisType

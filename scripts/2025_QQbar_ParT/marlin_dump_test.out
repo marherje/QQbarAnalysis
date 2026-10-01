@@ -1,0 +1,430 @@
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/cedviewer/e805a7f886da5dc695358c966dde118af0036aca_develop-c4zfdv/lib/libCEDViewer.so.1.21.0 (libCEDViewer.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/clicperformance/8a92e8c6964af6f5ba9f0ed9a687afc298d8cc02_develop-pwc57u/lib/libClicPerformance.so.2.5.1 (libClicPerformance.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/clupatra/1.3.1-iqea5g/lib/libClupatra.so.1.3.1 (libClupatra.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/forwardtracking/bd6ef3f58dc601266a835d1344682cbf94710de3_develop-ctg527/lib/libForwardTracking.so.1.14.2 (libForwardTracking.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/garlic/3.1-dr5h56/lib/libGarlic.so.3.1.0 (libGarlic.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/ildperformance/b6d5ba303afc85e62995a315ff2e0c071cad99eb_develop-kzwu6v/lib/libILDPerformance.so.1.12.1 (libILDPerformance.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/marlinkinfitprocessors/3da6620dcedd015a64e133761562e639b701736f_develop-42z7ot/lib/libMarlinKinfitProcessors.so.0.5.0 (libMarlinKinfitProcessors.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/marlinmlflavortagging/902342aa6adca9af9e14e34da396886e238cc417_develop-iyaso7/lib/libMarlinMLFlavorTagging.so (libMarlinMLFlavorTagging.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/pandoraanalysis/61b8993d121e84efa07bd74678b2ef687597ba77_develop-m7n5hq/lib/libPandoraAnalysis.so.2.0.1 (libPandoraAnalysis.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/conformaltracking/82fbb275ffa6e8eed5d8c8030032c6b6dd270e88_develop-kqvhx7/lib/libConformalTracking.so.1.12.1 (libConformalTracking.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/ddmarlinpandora/e4c53a5bb99a1995376c8d64ec98e6bb749d6074_develop-k3n4wi/lib/libDDMarlinPandora.so.0.14.0 (libDDMarlinPandora.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/fcalclusterer/13d14611fe39032f0b6bacde043f8e057e28234f_develop-wsn6wl/lib/libFCalClusterer.so (libFCalClusterer.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/lcfiplus/6a86ed6da1624c87dd6a9903b29191e94ca5d794_develop-wy26nu/lib/libLCFIPlus.so.0.11.0 (libLCFIPlus.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/lctuple/0a8162a702da7cd57b44057ae17879a9c171bc02_develop-45tirw/lib/libLCTuple.so.1.14.0 (libLCTuple.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/marlinfastjet/1582bd2eac7996ea9d75a573bdab276daed4653e_develop-y4k7ws/lib/libMarlinFastJet.so.0.5.3 (libMarlinFastJet.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/marlinreco/8d28454ec3984ebb815af7911bf1c346ad249784_develop-ivl7nz/lib/libMarlinReco.so.1.37.1 (libMarlinReco.so)-->
+PersistencyIO    INFO  +++ Set Streamer to dd4hep::OpaqueDataBlock
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/marlintrkprocessors/902d36d9999d46272ecb7ba06addde5a45f1bb33_develop-zu4pqw/lib/libMarlinTrkProcessors.so.2.12.8 (libMarlinTrkProcessors.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/overlay/edf53447c7d2d3f4d784dae5c1c8bee17abdf30a_develop-wvnq2b/lib/libOverlay.so.0.23.1 (libOverlay.so)-->
+<!-- Loading shared library : /cvmfs/sw-nightlies.hsf.org/key4hep/releases/2025-10-27/x86_64-almalinux9-gcc14.2.0-opt/marlindd4hep/715b4e5789f2d91027df6c4190a9260e5eb690f9_develop-3gnqnf/lib/libMarlinDD4hep.so.0.6.2 (libMarlinDD4hep.so)-->
+
+Read constant "productionfolder" , value = "/cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production"
+Read constant "PidPDFFile" , value = "/cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LikelihoodPID_Standard_l5_v01.root"
+Read constant "PidWeightFiles" , value = "/cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_02GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_03GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_04GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_05GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_06GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_07GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_08GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_09GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_10GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_11GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_12GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_13GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_14GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_15GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_16GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_17GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_18GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_19GeVP_clusterinfo.weights.xml /cvmfs/ilc.desy.de/sw/ILDConfig/v02-03-04/StandardConfig/production/HighLevelReco/PIDFiles/LowMomMuPiSeparation/TMVAClassification_BDTG_l5_20GeVP_clusterinfo.weights.xml"
+Read constant "StartFolder" , value = "/data/dust/user/marquezh/QQbarAnalysis2025/scripts/2025_QQbar_ParT"
+Evaluator        WARN  +++ Overwriting variable: name=Hcal_endcap_zmin value=HcalEndcap_min_z  Evaluator::Object : existing variable [setVariable error]
+Detector         WARN  +++ Object 'Hcal_endcap_zmin' is already defined. New value will be ignored
+DD4hep           WARN  ++ STD conditions NOT defined by client. NTP defaults taken.
+Detector         INFO  *********** Created World volume with size: 1500 1500 1500
+VisAttr          INFO  +++ TubeVis Allocated a Color: r:FF g:B2 b:7F, this will not save to a ROOT file
+VisAttr          INFO  +++ VXDVis Allocated a Color: r:19 g:7F b:7F, this will not save to a ROOT file
+VisAttr          INFO  +++ FTDVis Allocated a Color: r:00 g:19 b:00, this will not save to a ROOT file
+VisAttr          INFO  +++ FTDSensitiveVis Allocated a Color: r:FF g:FF b:72, this will not save to a ROOT file
+VisAttr          INFO  +++ FTDSupportVis Allocated a Color: r:FF g:7F b:7F, this will not save to a ROOT file
+VisAttr          INFO  +++ FTDHolePetalVis Allocated a Color: r:7F g:7F b:FF, this will not save to a ROOT file
+VisAttr          INFO  +++ FTDCylVis Allocated a Color: r:33 g:E5 b:F9, this will not save to a ROOT file
+VisAttr          INFO  +++ FTDCablesVis Allocated a Color: r:00 g:E5 b:00, this will not save to a ROOT file
+VisAttr          INFO  +++ ILD_TPCVis Allocated a Color: r:F4 g:F2 b:00, this will not save to a ROOT file
+VisAttr          INFO  +++ ILD_ECALVis Allocated a Color: r:7A g:F2 b:00, this will not save to a ROOT file
+VisAttr          INFO  +++ ILD_HCALVis Allocated a Color: r:C1 g:C1 b:30, this will not save to a ROOT file
+VisAttr          INFO  +++ ILD_YOKEVis Allocated a Color: r:16 g:C1 b:C1, this will not save to a ROOT file
+VisAttr          INFO  +++ ILD_COILVis Allocated a Color: r:47 g:47 b:DB, this will not save to a ROOT file
+VisAttr          INFO  +++ ILD_FTDVis Allocated a Color: r:63 g:19 b:91, this will not save to a ROOT file
+VisAttr          INFO  +++ ILD_FCALVis Allocated a Color: r:AA g:A8 b:AA, this will not save to a ROOT file
+DD4hep_Beampipe  INFO         0      80    13.5    13.5      14      14     0.5       0                   tube_IPInnerTube          G4_Be
+DD4hep_Beampipe  INFO        80     150    13.5      24 14.2584 24.75840.758391       0                  tube_IPInnerBulge          G4_Be
+DD4hep_Beampipe  INFO       150     230      24      24   24.75   24.75    0.75       0                   tube_IPOuterTube          G4_Be
+DD4hep_Beampipe  INFO       230 644.906      24 54.7082 26.7148  57.423 2.71479       0                   tube_IPOuterTubeBeampipeBeCableMix
+DD4hep_Beampipe  INFO   644.906 1046.12 54.7082 84.4027  57.423 87.1175 2.71479       0                   tube_IPOuterTubeBeampipeBeCableMix
+DD4hep_Beampipe  INFO   1046.12 1447.33 84.4027 114.097 87.1175 116.812 2.71479       0                   tube_IPOuterTubeBeampipeBeCableMix
+DD4hep_Beampipe  INFO   1447.33  2391.8 114.097     184 116.812 186.715 2.71479       0                   tube_IPOuterTubeBeampipeBeCableMix
+DD4hep_Beampipe  INFO    2391.8  2393.8       0      78   186.7   186.7   186.7       3                  tube_LumiCalFront          G4_Be
+DD4hep_Beampipe  INFO    2393.8    3110      78      78      79      79       1       7                  tube_LumiCalInnerstainless_steel
+DD4hep_Beampipe  INFO      3110    3111      14      16      79      79      65       5                  tube_BeamCalFrontstainless_steel
+DD4hep_Beampipe  INFO      3111 3315.02      14      14      15      15       1      12           tube_BeamCalLinkUpstreamstainless_steel
+DD4hep_Beampipe  INFO   3315.02 3335.02      14     9.5      15    11.5       1       1      tube_BeamCalLinkUpstreamTransstainless_steel
+DD4hep_Beampipe  INFO   3335.02    4080     9.5     9.5    11.5    11.5       2       1          tube_BeamCalToQD0Upstreamstainless_steel
+DD4hep_Beampipe  INFO      4080    4100     9.5       8    11.5      10       2       1     tube_BeamCalToQD0UpstreamTransstainless_steel
+DD4hep_Beampipe  INFO      4100    6300       8       8      28      28      20       1               tube_QD0CryoUpstreamstainless_steel
+DD4hep_Beampipe  INFO      6300   10000       8       8      10      10       2       1             tube_BeyondQD0Upstreamstainless_steel
+DD4hep_Beampipe  INFO      3111 3315.02      16      16      17      17       1       2           tube_BeamCalLinkDnstreamstainless_steel
+DD4hep_Beampipe  INFO   3315.02 3335.02      16      12      17      14       1       2      tube_BeamCalLinkDnstreamTransstainless_steel
+DD4hep_Beampipe  INFO   3335.02    5500      12      12      14      14       2       2       tube_BeamCalToQDEX1ADnstreamstainless_steel
+DD4hep_Beampipe  INFO      5500    7050      12      12      32      32      20       2                        tube_QDEX1Astainless_steel
+DD4hep_Beampipe  INFO      7050   10000      12      12      14      14       2       2             tube_BeyondQD0Dnstreamstainless_steel
+Compact          INFO  ++ Converted subdetector:Tube of type DD4hep_Beampipe_o1_v01 
+Compact          INFO  ++ Converted subdetector:QD0_cryostat of type TubeSupport_o1_v01 
+Compact          INFO  ++ Converted subdetector:QD0_support of type BoxSupport_o1_v01 
+[ VERBOSE "InitDD4hep"]  ############## layer : 0 number of ladders : 10
+[ VERBOSE "InitDD4hep"]   ***** place cabling for KaptonLines_00
+[ VERBOSE "InitDD4hep"]  layer 0 length of the cone 8.36061 opening angle 0.166196
+[ VERBOSE "InitDD4hep"]  kapton:layer 0 v phi 0 o phi 0
+[ VERBOSE "InitDD4hep"]  metal:layer 0 v phi 0 o phi 0
+[ VERBOSE "InitDD4hep"]  ############## layer : 1 number of ladders : 10
+[ VERBOSE "InitDD4hep"] ############## thetaTube = 0.159898
+[ VERBOSE "InitDD4hep"]   ***** place ladder 0 for SiActiveLayer_01
+[ VERBOSE "InitDD4hep"]   ***** place ladder 1 for SiActiveLayer_01
+[ VERBOSE "InitDD4hep"]   ***** place ladder 2 for SiActiveLayer_01
+[ VERBOSE "InitDD4hep"]   ***** place ladder 3 for SiActiveLayer_01
+[ VERBOSE "InitDD4hep"]   ***** place ladder 4 for SiActiveLayer_01
+[ VERBOSE "InitDD4hep"]   ***** place ladder 5 for SiActiveLayer_01
+[ VERBOSE "InitDD4hep"]   ***** place ladder 6 for SiActiveLayer_01
+[ VERBOSE "InitDD4hep"]   ***** place ladder 7 for SiActiveLayer_01
+[ VERBOSE "InitDD4hep"]   ***** place ladder 8 for SiActiveLayer_01
+[ VERBOSE "InitDD4hep"]   ***** place ladder 9 for SiActiveLayer_01
+[ VERBOSE "InitDD4hep"]  ############## layer : 2 number of ladders : 11
+[ VERBOSE "InitDD4hep"]   ***** place cabling for KaptonLines_02
+[ VERBOSE "InitDD4hep"]  layer 2 length of the cone 1.96 opening angle 0.33614
+[ VERBOSE "InitDD4hep"]  ############## layer : 3 number of ladders : 11
+[ VERBOSE "InitDD4hep"]  ############## layer : 4 number of ladders : 17
+[ VERBOSE "InitDD4hep"]   ***** place cabling for KaptonLines_04
+[ VERBOSE "InitDD4hep"]  layer 4 length of the cone 1.96 opening angle 0.953449
+[ VERBOSE "InitDD4hep"]  ############## layer : 5 number of ladders : 17
+Compact          INFO  ++ Converted subdetector:VXD of type VXD04 [tracker]
+[ VERBOSE "InitDD4hep"] FTD_Simple_Staggered:	 inner support thickness = 0.1	 cables thickness = 0.008	 2 x cable shield thickness = 0.02	 beamTubeClearance = 1.5
+[ VERBOSE "InitDD4hep"] FTD_Simple_Staggered: Disk:1	 z = 22	 inner rad = 3.975	 outer rad = 15.2	 beamtube rad = 2.475	 free space = 1.322
+[ VERBOSE "InitDD4hep"] FTD_Simple_Staggered: Disk:2	 z = 37.1309	 inner rad = 5.0307	 outer rad = 15.2	 beamtube rad = 3.5307	 free space = 1.322
+[ VERBOSE "InitDD4hep"] FTD_Simple_Staggered: Disk:3	 z = 64.4906	 inner rad = 7.05131	 outer rad = 29.89	 beamtube rad = 5.55131	 free space = 1.322
+[ VERBOSE "InitDD4hep"] FTD_Simple_Staggered: Disk:4	 z = 104.612	 inner rad = 10.0069	 outer rad = 30.9	 beamtube rad = 8.50685	 free space = 1.322
+[ VERBOSE "InitDD4hep"] FTD_Simple_Staggered: Disk:5	 z = 144.733	 inner rad = 12.9624	 outer rad = 30.9	 beamtube rad = 11.4624	 free space = 1.322
+[ VERBOSE "InitDD4hep"] FTD_Simple_Staggered: Disk:6	 z = 184.854	 inner rad = 15.9179	 outer rad = 30.9	 beamtube rad = 14.4179	 free space = 1.322
+[ VERBOSE "InitDD4hep"] FTD_Simple_Staggered: Disk:7	 z = 221.18	 inner rad = 18.5939	 outer rad = 30.9	 beamtube rad = 17.0939	 free space = 1.322
+Compact          INFO  ++ Converted subdetector:FTD of type FTD_Simple_Staggered [tracker]
+[ VERBOSE "InitDD4hep"] SIT_Simple_Pixel: Layer:0	 half length = 36.8	 sensor length = 9.2	 n sensors per ladder = 8	 min r sensitive = 15.29	 min r support = 15.31	 n ladders = 10	 ladder width = 9.91604	 ladder clearance = 0.01	 ladder dphi = 0.628319	 sensitive mat = G4_Si	 support mat = G4_C	 faces_IP = 1	 is_SIT1 = 1	 is_SIT2 = 0
+[ VERBOSE "InitDD4hep"] SIT_Simple_Pixel: Layer:1	 half length = 36.8	 sensor length = 9.2	 n sensors per ladder = 8	 min r sensitive = 15.54	 min r support = 15.44	 n ladders = 10	 ladder width = 10.0135	 ladder clearance = 0.01	 ladder dphi = 0.628319	 sensitive mat = G4_Si	 support mat = G4_C	 faces_IP = 0	 is_SIT1 = 0	 is_SIT2 = 0
+[ VERBOSE "InitDD4hep"] SIT_Simple_Pixel: Layer:2	 half length = 64.4	 sensor length = 9.2	 n sensors per ladder = 14	 min r sensitive = 29.99	 min r support = 30.01	 n ladders = 19	 ladder width = 9.98889	 ladder clearance = 0.01	 ladder dphi = 0.330694	 sensitive mat = G4_Si	 support mat = G4_C	 faces_IP = 1	 is_SIT1 = 0	 is_SIT2 = 1
+[ VERBOSE "InitDD4hep"] SIT_Simple_Pixel: Layer:3	 half length = 64.4	 sensor length = 9.2	 n sensors per ladder = 14	 min r sensitive = 30.24	 min r support = 30.14	 n ladders = 19	 ladder width = 10.039	 ladder clearance = 0.01	 ladder dphi = 0.330694	 sensitive mat = G4_Si	 support mat = G4_C	 faces_IP = 0	 is_SIT1 = 0	 is_SIT2 = 0
+[ VERBOSE "InitDD4hep"] SIT_Simple_Pixel done.
+[ VERBOSE "InitDD4hep"] 
+Compact          INFO  ++ Converted subdetector:SIT of type SIT_Simple_Pixel [tracker]
+[ VERBOSE "InitDD4hep"]  ** building TPC10_geo in lcgeo v00-05
+[ VERBOSE "InitDD4hep"]  Cathode Grip Ring Material: SiC_foam : Rad length = 1345.64 mm.
+[ VERBOSE "InitDD4hep"] Endplate material mix Density   = 0.000933671 g/cm3
+[ VERBOSE "InitDD4hep"] Endplate material mix Radlength = 564.519 mm
+[ VERBOSE "InitDD4hep"] TPC10: Inner radius of the gas volume is  354 mm.
+[ VERBOSE "InitDD4hep"] TPC10: Outer radius of the gas volume is 1714.8 mm.
+[ VERBOSE "InitDD4hep"] TPC10: Inner wall thickness is   25 mm.
+[ VERBOSE "InitDD4hep"] TPC10: Outer wall thickness is   55 mm.
+[ VERBOSE "InitDD4hep"] TPC10: Outer wall thickness is   55 mm.
+[ VERBOSE "InitDD4hep"] TPC10: Inner radius of the sensitive volume is 372.1 mm.
+[ VERBOSE "InitDD4hep"] TPC10: Outer radius of the sensitive volume is 1696.7 mm.
+[ VERBOSE "InitDD4hep"] TPC10: Number of Pad Rows in the TPC   220
+[ VERBOSE "InitDD4hep"] TPC10: Limiting the step length in the TPC to     5 mm.
+[ VERBOSE "InitDD4hep"] TPC10: Total Gas material corresponds to 0.117797% of a radiation length.
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Inner Wall: dr =  0.07 mm. Material = G4_Cu X0 = 1.43558  0.00487609% X0
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Inner Wall: dr =  0.05 mm. Material = G4_KAPTON X0 = 28.5747  0.00017498% X0
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Inner Wall: dr =   0.3 mm. Material = g10 X0 = 16.2002  0.00185183% X0
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Inner Wall: dr =  24.22 mm. Material = G4_AIR X0 = 30392.1  7.96917e-05% X0
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Inner Wall: dr =   0.3 mm. Material = g10 X0 = 16.2002  0.00185183% X0
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Inner Wall: dr =  0.05 mm. Material = G4_KAPTON X0 = 28.5747  0.00017498% X0
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Inner Wall: dr =  0.01 mm. Material = G4_Al X0 = 8.89632  0.000112406% X0
+[ VERBOSE "InitDD4hep"] TPC10: Inner wall material corresponds to 0.9% of a radiation length.
+[ VERBOSE "InitDD4hep"] TPC10: Inner wall effective X0 = 274.069
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Outer Wall: dr =  0.03 mm. Material = G4_Al X0 = 8.89632  0.000337218% X0
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Outer Wall: dr =  0.15 mm. Material = G4_KAPTON X0 = 28.5747  0.000524939% X0
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Outer Wall: dr =   0.9 mm. Material = g10 X0 = 16.2002  0.00555548% X0
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Outer Wall: dr =  52.66 mm. Material = G4_AIR X0 = 30392.1  0.000173269% X0
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Outer Wall: dr =   0.9 mm. Material = g10 X0 = 16.2002  0.00555548% X0
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Outer Wall: dr =  0.15 mm. Material = G4_KAPTON X0 = 28.5747  0.000524939% X0
+[ VERBOSE "InitDD4hep"] TPC10: Add Material to Outer Wall: dr =  0.21 mm. Material = G4_Cu X0 = 1.43558  0.0146283% X0
+[ VERBOSE "InitDD4hep"] TPC10: Outer wall material corresponds to 2.7% of a radiation length.
+[ VERBOSE "InitDD4hep"] TPC10: Outer wall effective X0 = 201.468
+[ VERBOSE "InitDD4hep"] Cathode dz = 0.0046
+[ VERBOSE "InitDD4hep"] Place cathode +z at 0.0023
+[ VERBOSE "InitDD4hep"] Place cathode -z at -0.0023
+[ VERBOSE "InitDD4hep"] TPC10: Readout material corresponds to 6.9% of a radiation length.
+[ VERBOSE "InitDD4hep"] TPC10: Total Endplate material corresponds to 8.68633% of a radiation length.
+Compact          INFO  ++ Converted subdetector:TPC of type TPC10 [tracker]
+[ VERBOSE "InitDD4hep"] SET_Simple_Planar: Layer:0	 half length = 230	 sensor length = 9.2	 n sensors per ladder = 50	 min r sensitive = 177.27	 min r support = 177.29	 n ladders = 24	 ladder width = 46.6561	 ladder clearance = 0.01	 ladder dphi = 0.261799	 sensitive mat = G4_Si	 support mat = G4_C	 faces_IP = 1
+[ VERBOSE "InitDD4hep"] SET_Simple_Planar: Layer:1	 half length = 230	 sensor length = 9.2	 n sensors per ladder = 50	 min r sensitive = 177.52	 min r support = 177.42	 n ladders = 24	 ladder width = 46.6956	 ladder clearance = 0.01	 ladder dphi = 0.261799	 sensitive mat = G4_Si	 support mat = G4_C	 faces_IP = 0
+[ VERBOSE "InitDD4hep"] SET_Simple_Planar done.
+[ VERBOSE "InitDD4hep"] 
+Compact          INFO  ++ Converted subdetector:SET of type SET_Simple_Planar [tracker]
+[ VERBOSE "InitDD4hep"] -----------------------
+[ VERBOSE "InitDD4hep"] creating SEcal06_Barrel
+[ VERBOSE "InitDD4hep"] -----------------------
+[ VERBOSE "InitDD4hep"] SEcal06_Barrel: Preshower ? 0
+[ VERBOSE "InitDD4hep"] SEcal06_Barrel: absorber layers 20*2.1 mm + 10*4.2 mm + 0*0 mm 
+[ VERBOSE "InitDD4hep"] SEcal06_Barrel : module thickness = 22.32
+[ VERBOSE "InitDD4hep"] SEcal06_Barrel : layer config: 0 
+[ VERBOSE "InitDD4hep"] SEcal06_Barrel : width of module, alveolus = 94 18.736
+Compact          INFO  ++ Converted subdetector:EcalBarrel of type SEcal06_Barrel [calorimeter]
+EcalBarrel       INFO  +++ Processing SurfaceInstaller for subdetector: 'EcalBarrel'
+DD4hep_CaloFaceBarrelSurfacePlugin INFO  install tracking surfaces for :  EcalBarrel 
+[ VERBOSE "InitDD4hep"] ------------------------
+[ VERBOSE "InitDD4hep"] creating SEcal06_Endcaps
+[ VERBOSE "InitDD4hep"] ------------------------
+[ VERBOSE "InitDD4hep"] Preshower ? 0
+[ VERBOSE "InitDD4hep"] absorber layers 20*0.21mm + 10*0.42mm + 0*0mm 
+[ VERBOSE "InitDD4hep"] module thickness = 22.32
+[ VERBOSE "InitDD4hep"] layer config: 0 
+[ VERBOSE "InitDD4hep"] ECAL endcap tower configuration 3 3 3 : 3 3 3 
+[ VERBOSE "InitDD4hep"] alveolus width = 18.736
+Compact          INFO  ++ Converted subdetector:EcalEndcap of type SEcal06_Endcaps [calorimeter]
+EcalEndcap       INFO  +++ Processing SurfaceInstaller for subdetector: 'EcalEndcap'
+DD4hep_CaloFaceEndcapSurfacePlugin INFO  install tracking surfaces for :  EcalEndcap 
+[ VERBOSE "InitDD4hep"] ---------------------------------
+[ VERBOSE "InitDD4hep"]  creating Ecal ECRing ( SEcal05_ECRing ) 
+[ VERBOSE "InitDD4hep"] ---------------------------------
+Compact          INFO  ++ Converted subdetector:EcalPlug of type SEcal05_ECRing [calorimeter]
+TiledLayerGridXY INFO   ######### dd4hep::DDSegmentation::TiledLayerGridXY() 
+Compact          INFO  ++ Converted subdetector:HcalBarrel of type SHcalSc04_Barrel_v04 [calorimeter]
+[ VERBOSE "InitDD4hep"] 
+[ VERBOSE "InitDD4hep"]  HcalEndcap_inner_radius = 350 mm
+[ VERBOSE "InitDD4hep"]  HcalEndcap_outer_radius = 3225.54 mm
+[ VERBOSE "InitDD4hep"]  HcalEndcap_min_z = 2650 mm
+[ VERBOSE "InitDD4hep"]  HcalEndcap_max_z = 3937 mm
+Compact          INFO  ++ Converted subdetector:HcalEndcap of type SHcalSc04_Endcaps_v01 [calorimeter]
+[ VERBOSE "InitDD4hep"]  
+[ VERBOSE "InitDD4hep"] 
+[ VERBOSE "InitDD4hep"] 
+[ VERBOSE "InitDD4hep"]  CREATE DETECTOR: SHcalSC04_EndcapRing_v01
+[ VERBOSE "InitDD4hep"]     HCAL endcap rings: HcalEndcapRing_inner_radius: 214.584
+[ VERBOSE "InitDD4hep"]     HCAL endcap rings: HcalEndcapRing_outer_radius: 298.001
+[ VERBOSE "InitDD4hep"]     HCAL endcap rings: HcalEndcapRing_min_z:  241.18
+[ VERBOSE "InitDD4hep"]     HCAL endcap rings: HcalEndcapRing_max_z:  263.5
+[ VERBOSE "InitDD4hep"]     HCAL endcap rings: SpaceForLayers:  20.82
+[ VERBOSE "InitDD4hep"]     HCAL endcap rings will have 7 layers.
+Compact          INFO  ++ Converted subdetector:HcalRing of type SHcalSc04_EndcapRing_v01 [calorimeter]
+[ VERBOSE "InitDD4hep"]  Build the yoke within this dimension 
+[ VERBOSE "InitDD4hep"]   ...Yoke  db: symmetry             12
+[ VERBOSE "InitDD4hep"]   ...Yoke  db: rInnerBarrel         447.504
+[ VERBOSE "InitDD4hep"]   ...Yoke  db: zStartEndcap         407.2
+[ VERBOSE "InitDD4hep"]   ...Muon  db: iron_thickness       10
+[ VERBOSE "InitDD4hep"]   ...Muon  db: gap_thickness        4
+[ VERBOSE "InitDD4hep"]   ...Muon  db: number_of_layers     10
+[ VERBOSE "InitDD4hep"]   ...Muon par: yokeBarrelThickness  324.1
+[ VERBOSE "InitDD4hep"]   ...Muon par: Barrel_half_z        404.7
+Compact          INFO  ++ Converted subdetector:YokeBarrel of type Yoke05_Barrel [calorimeter]
+[ VERBOSE "InitDD4hep"]  Build the yoke within this dimension 
+[ VERBOSE "InitDD4hep"]   ...Yoke  db: symmetry             12
+[ VERBOSE "InitDD4hep"]   ...Yoke  db: rInnerEndcap         35
+[ VERBOSE "InitDD4hep"]   ...Yoke  db: rOuterEndcap         771.604
+[ VERBOSE "InitDD4hep"]   ...Yoke  db: zStartEndcap         407.2
+[ VERBOSE "InitDD4hep"]   ...Muon  db: iron_thickness       10
+[ VERBOSE "InitDD4hep"]   ...Muon  db: gap_thickness        4
+[ VERBOSE "InitDD4hep"]   ...Muon  db: number_of_layers     10
+[ VERBOSE "InitDD4hep"]   ...Muon par: yokeEndcapThickness  264
+[ VERBOSE "InitDD4hep"]   ...Muon par: Barrel_half_z        404.7
+[ VERBOSE "InitDD4hep"]   ...Plug par: build_plug is true, there is space to build yoke plug
+[ VERBOSE "InitDD4hep"]   ...Plug par: HCAL_half_z          393.7
+[ VERBOSE "InitDD4hep"]   ...Plug par: HCAL_Plug_Gap        4.5
+[ VERBOSE "InitDD4hep"]   ...Plug par: Plug Thickness       9
+[ VERBOSE "InitDD4hep"]   ...Plug par: Plug Radius          339.554
+Compact          INFO  ++ Converted subdetector:YokeEndcap of type Yoke06_Endcaps [calorimeter]
+[ VERBOSE "InitDD4hep"] dd4hep::Ref_t create_detector(dd4hep::Detector&, xml_h, dd4hep::SensitiveDetector)
+[ VERBOSE "InitDD4hep"] 
+[ VERBOSE "InitDD4hep"]  Here is my LumiCal_o1_v03 :
+[ VERBOSE "InitDD4hep"] ----------------------------
+[ VERBOSE "InitDD4hep"]  The crossing angle is:  0.014 radian
+[ VERBOSE "InitDD4hep"]      Lcal z-begin : 2411.8 mm
+[ VERBOSE "InitDD4hep"]      Lcal z-end   : 2540.5 mm
+[ VERBOSE "InitDD4hep"]    (x,y,z)-center : ( 17.3333,0 ,+- 2476.15 ) mm
+[ VERBOSE "InitDD4hep"]      sensorInnerR : 84.0221 mm
+[ VERBOSE "InitDD4hep"]      sensorouterR : 194 mm
+[ VERBOSE "InitDD4hep"]         thickness : 128.7 mm
+[ VERBOSE "InitDD4hep"]           cell_dR : 1.71841 mm
+[ VERBOSE "InitDD4hep"]         cell_dPhi : 0.1309  radian
+[ VERBOSE "InitDD4hep"]        offset Phi : 3.75 deg
+[ VERBOSE "InitDD4hep"]     stagger angle : 3.75 deg
+[ VERBOSE "InitDD4hep"]     tile gap size : 2.4 mm
+[ VERBOSE "InitDD4hep"]     tile span phi : 30 deg
+[ VERBOSE "InitDD4hep"]    services space : 46.914 mm
+[ VERBOSE "InitDD4hep"]   Layer thickness : 4.29   ( rad. length X0:  0.895834 )
+[ VERBOSE "InitDD4hep"]    LumiCal length : 128.7 ( rad. length X0: 26.875   )
+[ VERBOSE "InitDD4hep"] -----------------------------------------------------------------
+[ VERBOSE "InitDD4hep"] 
+Compact          INFO  ++ Converted subdetector:Lcal of type LumiCal_o1_v03 [calorimeter]
+[ VERBOSE "InitDD4hep"] dd4hep::Ref_t create_detector(dd4hep::Detector&, xml_h, dd4hep::SensitiveDetector)
+[ VERBOSE "InitDD4hep"] Here is my LHCal_v01
+[ VERBOSE "InitDD4hep"]  --------------------------------------------------------------------------
+[ VERBOSE "InitDD4hep"]  Building detector: LHCal
+[ VERBOSE "InitDD4hep"]  - Main crossing angle: 0.014 radian
+[ VERBOSE "InitDD4hep"]  - LHCal begin Z         2680 mm
+[ VERBOSE "InitDD4hep"]  - LHCal end Z           3160 mm
+[ VERBOSE "InitDD4hep"]  - LHCal center (X,Y,Z)  ( 20.4403,0 ,2920 ) mm
+[ VERBOSE "InitDD4hep"]  - LHCal inner R         130 mm
+[ VERBOSE "InitDD4hep"]  - LHCal thickness       480 mm
+[ VERBOSE "InitDD4hep"]  - Layer Thickness 16 mm
+[ VERBOSE "InitDD4hep"]  -            Total Length: 480 mm
+[ VERBOSE "InitDD4hep"]  - Total Interacion Length: 3.89484
+[ VERBOSE "InitDD4hep"]  --------------------------------------------------------------------------
+Compact          INFO  ++ Converted subdetector:LHCal of type LHCal_v01 [calorimeter]
+[ VERBOSE "InitDD4hep"] This is the BeamCal
+[ VERBOSE "InitDD4hep"] Building all.
+[ VERBOSE "InitDD4hep"]  The crossing angle is: 0.014 radian
+[ VERBOSE "InitDD4hep"] bcalCutOutSpan  785.398 mrad
+[ VERBOSE "InitDD4hep"] bcalCutOutSpan  45 degree
+[ VERBOSE "InitDD4hep"] bcalCutOutStart 2.74889 Radian
+[ VERBOSE "InitDD4hep"] bcalCutOutEnd   3.53429 Radian
+[ VERBOSE "InitDD4hep"] incommingBeamPipeRadius: 1.6 cm
+[ VERBOSE "InitDD4hep"] cutOutRadius: 6.45257 cm 
+[ VERBOSE "InitDD4hep"] Total Length 20.0024 cm
+[ VERBOSE "InitDD4hep"] Layer Thickness 8.40008 cm
+[ VERBOSE "InitDD4hep"] Total Length 20.0024 cm
+[ VERBOSE "InitDD4hep"] Layer Thickness 0.40008 cm
+Compact          INFO  ++ Converted subdetector:BeamCal of type BeamCal_o1_v02 [calorimeter]
+[ VERBOSE "InitDD4hep"] 
+[ VERBOSE "InitDD4hep"] Building Coil...
+[ VERBOSE "InitDD4hep"] 
+[ VERBOSE "InitDD4hep"] ... cryostat inner_radius 342.514
+[ VERBOSE "InitDD4hep"] ... cryostat outer_radius 417.494
+[ VERBOSE "InitDD4hep"] ... cryostat half_z       387.19
+[ VERBOSE "InitDD4hep"]  ... for the time being simply use a tube of aluminum ...
+[ VERBOSE "InitDD4hep"] SCoil02 done.
+[ VERBOSE "InitDD4hep"] 
+Compact          INFO  ++ Converted subdetector:Coil of type SCoil02 
+[ VERBOSE "InitDD4hep"] 
+[ VERBOSE "InitDD4hep"] Building SServices00
+[ VERBOSE "InitDD4hep"] 
+[ VERBOSE "InitDD4hep"]  Ecal_inner_radius: 180.48
+[ VERBOSE "InitDD4hep"]  Ecal_outer_radius: 202.8
+[ VERBOSE "InitDD4hep"]   module_thickness: 22.32
+[ VERBOSE "InitDD4hep"]       bottom_dim_x: 181.08
+[ VERBOSE "InitDD4hep"]          top_dim_x: 136.44
+[ VERBOSE "InitDD4hep"]         RailHeight: 3
+[ VERBOSE "InitDD4hep"] 
+[ VERBOSE "InitDD4hep"] 
+[ VERBOSE "InitDD4hep"]    - HcalServicesModule_InnerServicesWidth = 20
+[ VERBOSE "InitDD4hep"]    - HcalServicesModule_ZMinus_Cu_Thickness = 0.82
+[ VERBOSE "InitDD4hep"]    - HcalServicesModule_ZMinus_PE_Thickness = 2.75
+[ VERBOSE "InitDD4hep"]    - HcalServicesModule_ZMinus_StainlessSteel_Thickness = 1.5
+[ VERBOSE "InitDD4hep"]    - HcalServicesModule_ZPlus_Cu_Thickness = 0.74
+[ VERBOSE "InitDD4hep"]    - HcalServicesModule_ZPlus_PE_Thickness = 2.56
+[ VERBOSE "InitDD4hep"]    - HcalServicesModule_ZPlus_StainlessSteel_Thickness = 1.5
+[ VERBOSE "InitDD4hep"]    - HcalServices_outer_Cu_thickness = 0.04
+[ VERBOSE "InitDD4hep"]    - HcalServices_outer_FR4_thickness = 0.28
+[ VERBOSE "InitDD4hep"]    - Hcal_R_max = 339.554
+[ VERBOSE "InitDD4hep"]    - Hcal_back_plate_thickness = 1.5
+[ VERBOSE "InitDD4hep"]    - Hcal_nlayers = 48
+[ VERBOSE "InitDD4hep"]    - Hcal_radiator_thickness = 2
+[ VERBOSE "InitDD4hep"]    - Hcal_stave_gaps = 1
+[ VERBOSE "InitDD4hep"]    - Hcal_steel_cassette_thickness = 0.05
+[ VERBOSE "InitDD4hep"]    - BuildHcalElectronicsInterface = true 
+[ VERBOSE "InitDD4hep"] 
+[ VERBOSE "InitDD4hep"]    - SIT Cone Cable services: 
+[ VERBOSE "InitDD4hep"]    - zPlane[0] = 37.401
+[ VERBOSE "InitDD4hep"]    - zPlane[1] = 63.9506
+[ VERBOSE "InitDD4hep"]    - rInner[0] = 15.3
+[ VERBOSE "InitDD4hep"]    - rInner[1] = 29.89
+[ VERBOSE "InitDD4hep"]    - rOuter[0] = 15.304
+[ VERBOSE "InitDD4hep"]    - rOuter[1] = 29.892
+[ VERBOSE "InitDD4hep"] 
+[ VERBOSE "InitDD4hep"]    - SIT12_cable_thickness = 0.0063
+[ VERBOSE "InitDD4hep"]    - SIT1_Radius = 15.3
+[ VERBOSE "InitDD4hep"]    - SIT2_Radius = 29.99
+[ VERBOSE "InitDD4hep"]    - SServices_FTD2_cone_thickness = 0.004
+[ VERBOSE "InitDD4hep"]    - SServices_FTD3_cone_thickness = 0.002
+[ VERBOSE "InitDD4hep"]    - TUBE_IPOuterBulge_end_z = 239.18
+[ VERBOSE "InitDD4hep"]    - SServices_FTD7_cables_thickness = 0.085
+[ VERBOSE "InitDD4hep"] 
+[ VERBOSE "InitDD4hep"]    - VXD_cable_cross_section_area = 25 mm^2
+[ VERBOSE "InitDD4hep"]    - VXD_cable_inner1_radius = 30 mm
+[ VERBOSE "InitDD4hep"]    - VXD_cable_inner2_radius = 27 mm
+[ VERBOSE "InitDD4hep"]    - VXD_cable_cone_middle_thickness = 0.139269 mm
+[ VERBOSE "InitDD4hep"]    - VXD_cable_outer1_radius = 30.1393 mm
+[ VERBOSE "InitDD4hep"]    - VXD_cable_outer2_radius = 27.1393 mm
+[ VERBOSE "InitDD4hep"]    - VXD_cable_z_start = 177.7 mm
+[ VERBOSE "InitDD4hep"]    - VXD_cable_z_end = 230 mm
+Compact          INFO  ++ Converted subdetector:SServices00 of type SServices00 
+Compact          INFO  ++ Converted field: Successfully created field GlobalSolenoid [solenoid]
+Detector         INFO  +++ Patching names of anonymous shapes....
+DD4hepVolumeManager INFO  **** running plugin DD4hepVolumeManager ! 
+VolumeManager    INFO   - populating volume ids - be patient ...
+VolumeManager    INFO   - populating volume ids - done. 623843 nodes.
+VolumeManager    INFO  +++ Volume manager populated and loaded.
+InstallSurfaceManager INFO  **** running plugin InstallSurfaceManager ! 
+InstallSurfaceManager INFO  --------  SurfaceManager contains the following maps : --------- 
+  key: BeamCal 	 number of surfaces : 0
+  key: Coil 	 number of surfaces : 0
+  key: EcalBarrel 	 number of surfaces : 8
+  key: EcalEndcap 	 number of surfaces : 2
+  key: EcalPlug 	 number of surfaces : 0
+  key: FTD 	 number of surfaces : 384
+  key: HcalBarrel 	 number of surfaces : 0
+  key: HcalEndcap 	 number of surfaces : 0
+  key: HcalRing 	 number of surfaces : 0
+  key: LHCal 	 number of surfaces : 0
+  key: Lcal 	 number of surfaces : 0
+  key: QD0_cryostat 	 number of surfaces : 8
+  key: QD0_support 	 number of surfaces : 0
+  key: SET 	 number of surfaces : 2400
+  key: SIT 	 number of surfaces : 692
+  key: SServices00 	 number of surfaces : 6
+  key: TPC 	 number of surfaces : 224
+  key: Tube 	 number of surfaces : 15
+  key: VXD 	 number of surfaces : 398
+  key: YokeBarrel 	 number of surfaces : 0
+  key: YokeEndcap 	 number of surfaces : 0
+  key: calorimeter 	 number of surfaces : 10
+  key: passive 	 number of surfaces : 29
+  key: tracker 	 number of surfaces : 4098
+  key: world 	 number of surfaces : 4137
+---------------------------------------------------------------- 
+
+[ VERBOSE "JetClusteringAndFlavorTag"] LCIOStorer: initialization finished.
+[ VERBOSE "JetClusteringAndFlavorTag"] EventStore::Register: collection PandoraPFOs registered with type vector<lcfiplus::Track*>
+[ VERBOSE "JetClusteringAndFlavorTag"] EventStore::Register: collection PandoraPFOs registered with type vector<lcfiplus::Neutral*>
+[ VERBOSE "JetClusteringAndFlavorTag"] LCIOStorer initialized without MCParticle collection.
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter JetClustering.PrimaryVertexCollectionName not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] Loading LCIO vertex collection: BuildUpVertex
+[ VERBOSE "JetClusteringAndFlavorTag"] BuildUpVertex loading 
+[ VERBOSE "JetClusteringAndFlavorTag"] Registering output LCIO vertex collection: BuildUpVertex
+[ VERBOSE "JetClusteringAndFlavorTag"] EventStore::Register: collection BuildUpVertex registered with type vector<lcfiplus::Vertex*>
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter JetClustering.AlphaParameter not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter JetClustering.OutputJetStoresVertex not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] Registering output LCIO jet collection: VertexJets
+[ VERBOSE "JetClusteringAndFlavorTag"] EventStore::Register: collection VertexJets registered with type vector<lcfiplus::Jet*>
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter JetClustering.YAddedForJetVertexLepton not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter JetClustering.MuonIDMinimumEnergy not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter JetClustering.MaxNumberOfJetsForYThreshold not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] Registering output LCIO jet collection: RefinedJets
+[ VERBOSE "JetClusteringAndFlavorTag"] EventStore::Register: collection RefinedJets registered with type vector<lcfiplus::Jet*>
+[ VERBOSE "JetClusteringAndFlavorTag"] Registering output LCIO vertex collection: RefinedVertex
+[ VERBOSE "JetClusteringAndFlavorTag"] EventStore::Register: collection RefinedVertex registered with type vector<lcfiplus::Vertex*>
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter JetVertexRefiner.useBNess not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter JetVertexRefiner.BNessCut not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter JetVertexRefiner.BNessCutE1 not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] normd0ip[0] = 0.258081 normd0ip[1] = 0.30437
+[ VERBOSE "JetClusteringAndFlavorTag"] normz0ip[0] = 0.246013 normz0ip[1] = 0.296857
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter FlavorTag.NVTXhitsJointProbD0 not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter FlavorTag.NVTXhitsJointProbZ0 not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter FlavorTag.NhitsMostSignificantTrack not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] Initializing FTManager variables.
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter FlavorTag.ExportAllVariables not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] Parameter FlavorTag.CategoryDefinition5 not found.
+[ VERBOSE "JetClusteringAndFlavorTag"] definition for index 5 not found, skipping
+[ VERBOSE "JetClusteringAndFlavorTag"] Printing object map in EventStore...
+[ VERBOSE "JetClusteringAndFlavorTag"] Name: BuildUpVertex, Class: vector<lcfiplus::Vertex*>
+[ VERBOSE "JetClusteringAndFlavorTag"] Name: PandoraPFOs, Class: vector<lcfiplus::Track*>
+[ VERBOSE "JetClusteringAndFlavorTag"] Name: PandoraPFOs, Class: vector<lcfiplus::Neutral*>
+[ VERBOSE "JetClusteringAndFlavorTag"] Name: RefinedJets, Class: vector<lcfiplus::Jet*>
+[ VERBOSE "JetClusteringAndFlavorTag"] Name: RefinedVertex, Class: vector<lcfiplus::Vertex*>
+[ VERBOSE "JetClusteringAndFlavorTag"] Name: VertexJets, Class: vector<lcfiplus::Jet*>
+[ VERBOSE "JetClusteringAndFlavorTag"] Printing object map in EventStore finished.
+[ VERBOSE "MyThrustReconstruction"] 
+[ VERBOSE "MyThrustReconstruction"] --------- Ranlux engine status ---------
+[ VERBOSE "MyThrustReconstruction"]  Initial seed = 1299961164
+[ VERBOSE "MyThrustReconstruction"]  float_seed_table[] = 0.397658 0.132447 0.940001 0.960164 0.929546 0.729105 0.0154438 0.0353801 0.901854 0.795885 0.704647 0.337801 0.331996 0.313917 0.0435965 0.543279 0.928522 0.568698 0.0711645 0.169046 0.570143 0.787646 0.341791 0.86898 
+[ VERBOSE "MyThrustReconstruction"]  i_lag = 12, j_lag = 22
+[ VERBOSE "MyThrustReconstruction"]  carry = 0, count24 = 19
+[ VERBOSE "MyThrustReconstruction"]  luxury = 4 nskip = 365
+[ VERBOSE "MyThrustReconstruction"] ----------------------------------------
+[ VERBOSE "JetClusteringAndFlavorTag"] Loading LCIO vertex collection: PrimaryVertex
+[ VERBOSE "JetClusteringAndFlavorTag"] PrimaryVertex loading 
+[ VERBOSE "JetClusteringAndFlavorTag"] EventStore::Register: collection PrimaryVertex registered with type vector<lcfiplus::Vertex*>
+[ VERBOSE "JetClusteringAndFlavorTag"] Loading LCIO vertex collection: BuildUpVertex_V0
+[ VERBOSE "JetClusteringAndFlavorTag"] BuildUpVertex_V0 loading 
+[ VERBOSE "JetClusteringAndFlavorTag"] EventStore::Register: collection BuildUpVertex_V0 registered with type vector<lcfiplus::Vertex*>
+[ VERBOSE "JetClusteringAndFlavorTag"] LcfiplusProcessor::end()  JetClusteringAndFlavorTag processed 9 events in 1 runs 

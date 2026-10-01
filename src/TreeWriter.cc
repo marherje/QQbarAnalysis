@@ -86,6 +86,20 @@ namespace QQbarProcessor
     _hTree->Branch("jet_pz", data._jet_pz, "jet_pz[2]/F");
     _hTree->Branch("jet_btag", data._jet_btag, "jet_btag[2]/F");
     _hTree->Branch("jet_ctag", data._jet_ctag, "jet_ctag[2]/F");
+    _hTree->Branch("jet_cattag", data._jet_cattag, "jet_cattag[2]/F");
+    // ParT 11-category probabilities
+    _hTree->Branch("jet_ParT_b", data._jet_ParT_b, "jet_ParT_b[2]/F");
+    _hTree->Branch("jet_ParT_c", data._jet_ParT_c, "jet_ParT_c[2]/F");
+    _hTree->Branch("jet_ParT_s", data._jet_ParT_s, "jet_ParT_s[2]/F");
+    _hTree->Branch("jet_ParT_u", data._jet_ParT_u, "jet_ParT_u[2]/F");
+    _hTree->Branch("jet_ParT_d", data._jet_ParT_d, "jet_ParT_d[2]/F");
+    _hTree->Branch("jet_ParT_bbar", data._jet_ParT_bbar, "jet_ParT_bbar[2]/F");
+    _hTree->Branch("jet_ParT_cbar", data._jet_ParT_cbar, "jet_ParT_cbar[2]/F");
+    _hTree->Branch("jet_ParT_sbar", data._jet_ParT_sbar, "jet_ParT_sbar[2]/F");
+    _hTree->Branch("jet_ParT_ubar", data._jet_ParT_ubar, "jet_ParT_ubar[2]/F");
+    _hTree->Branch("jet_ParT_dbar", data._jet_ParT_dbar, "jet_ParT_dbar[2]/F");
+    _hTree->Branch("jet_ParT_g", data._jet_ParT_g, "jet_ParT_g[2]/F");
+    //-----
     _hTree->Branch("y23", &data._y23, "y23/F");
     _hTree->Branch("y12", &data._y12, "y12/F");
     _hTree->Branch("d23", &data._d23, "d23/F");
@@ -111,6 +125,10 @@ namespace QQbarProcessor
   // pfo inside the jets
     _hTree->Branch("pfo_n", &data._pfo_n, "pfo_n/I");
     _hTree->Branch("nvtx", &data._nvtx, "nvtx/I");
+    _hTree->Branch("pfo_n_j1", &data._pfo_n_j1, "pfo_n_j1/I");
+    _hTree->Branch("jet_nvtx_j1", &data._jet_nvtx_j1, "jet_nvtx_j1/I");
+    _hTree->Branch("pfo_n_j2", &data._pfo_n_j2, "pfo_n_j2/I");
+    _hTree->Branch("jet_nvtx_j2", &data._jet_nvtx_j2, "jet_nvtx_j2/I");
 
     _hTree->Branch("pfo_match", data._pfo_jet_match, "pfo_match[pfo_n]/I");
     _hTree->Branch("pfo_truejet_pdg", data._pfo_truejet_pdg, "pfo_truejet_pdg[pfo_n]/I");
@@ -177,6 +195,12 @@ namespace QQbarProcessor
     _hTree->Branch("pfo_piddedx_pi_lkhood", data._pfo_piddedx_pi_lkhood, "pfo_piddedx_pi_lkhood[pfo_n]/F");
     _hTree->Branch("pfo_piddedx_k_lkhood", data._pfo_piddedx_k_lkhood, "pfo_piddedx_k_lkhood[pfo_n]/F");
     _hTree->Branch("pfo_piddedx_p_lkhood", data._pfo_piddedx_p_lkhood, "pfo_piddedx_p_lkhood[pfo_n]/F");
+
+    _hTree->Branch("pfo_cpid_e", data._pfo_cpid_e, "pfo_cpid_e[pfo_n]/F");
+    _hTree->Branch("pfo_cpid_mu", data._pfo_cpid_mu, "pfo_cpid_mu[pfo_n]/F");
+    _hTree->Branch("pfo_cpid_pi", data._pfo_cpid_pi, "pfo_cpid_pi[pfo_n]/F");
+    _hTree->Branch("pfo_cpid_k", data._pfo_cpid_k, "pfo_cpid_k[pfo_n]/F");
+    _hTree->Branch("pfo_cpid_p", data._pfo_cpid_p, "pfo_cpid_p[pfo_n]/F");
 
     _hTree->Branch("pfo_pidtof_p_at_calo", data._pfo_pidtof_p_at_calo, "pfo_pidtof_p_at_calo[pfo_n]/F");
 

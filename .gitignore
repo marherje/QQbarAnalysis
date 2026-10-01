@@ -1,2 +1,27 @@
 build/
 scripts/2025_QQbar/NTuples
+
+# compiled libraries / build artifacts
+lib/
+*.o
+*.so
+*.so.*
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+
+# vendored web viewer
+rootwebviewer/
+
+# run logs and editor/temp junk
+nohup*.out
+*.log
+*~
+temp_config.C
+scripts/2025_QQbar_CPID/sedgUccF2
+# analysis/training outputs (regenerable data, not source)
+*.root
+*.slcio
+*.weights.xml
+*.class.C

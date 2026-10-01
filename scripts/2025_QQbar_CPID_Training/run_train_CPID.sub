@@ -1,0 +1,15 @@
+# Unix submit description file
+# run_train_CPID.sub -- simple Marlin job
+
+executable              = run_train_CPID.sh
+log                     = run_train_CPID.log
+output                  = outfile_train_CPID.txt
+error                   = errors_train_CPID.txt
+should_transfer_files   = Yes
+when_to_transfer_output = ON_EXIT
+request_memory          = 8GB
+request_runtime         = 300000
++MaxRuntime             = 300000
++JobMaxVacateTime       = 60
+JobBatchName            = CPID_training
+queue 1

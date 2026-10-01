@@ -39,7 +39,7 @@ namespace QQbarProcessor
 			//
 			//	Constructors
 			//
-			RecoJet (EVENT::ReconstructedParticle * rawjet, float btag, float ctag, int number);// : IMPL::ReconstructedParticleImpl(rawjet);
+			RecoJet (EVENT::ReconstructedParticle * rawjet, float btag, float ctag, float cattag, int number, float parT_b, float parT_c, float parT_s, float parT_u, float parT_d, float parT_bbar, float parT_cbar, float parT_sbar, float parT_ubar, float parT_dbar, float parT_g);// : IMPL::ReconstructedParticleImpl(rawjet);
 			RecoJet ();
 			virtual ~RecoJet () {};
 			//
@@ -48,8 +48,32 @@ namespace QQbarProcessor
 			JetCharge & GetComputedCharge();
 			const float GetBTag() const;
 			const float GetCTag() const;
+			const float GetCatTag() const;
+			const float GetParTB() const;
+			const float GetParTC() const;
+			const float GetParTS() const;
+			const float GetParTU() const;
+			const float GetParTD() const;
+			const float GetParTBbar() const;
+			const float GetParTCbar() const;
+			const float GetParTSbar() const;
+			const float GetParTUbar() const;
+			const float GetParTDbar() const;
+			const float GetParTG() const;
 			void SetBTag(float value);
 			void SetCTag(float value);
+			void SetCatTag(float value);
+			void SetParTB(float value);
+			void SetParTC(float value);
+			void SetParTS(float value);
+			void SetParTU(float value);
+			void SetParTD(float value);
+			void SetParTBbar(float value);
+			void SetParTCbar(float value);
+			void SetParTSbar(float value);
+			void SetParTUbar(float value);
+			void SetParTDbar(float value);
+			void SetParTG(float value);
 			void SetRecoVertices(std::vector<  EVENT::Vertex * > * vertices);
 			std::vector<  EVENT::Vertex * > * GetRecoVertices();
 			int GetNumberOfVertices();
@@ -79,6 +103,18 @@ namespace QQbarProcessor
 			//
 			float myBTag;
 			float myCTag;
+			float myCatTag;
+			float myParT_b;
+			float myParT_c;
+			float myParT_s;
+			float myParT_u;
+			float myParT_d;
+			float myParT_bbar;
+			float myParT_cbar;
+			float myParT_sbar;
+			float myParT_ubar;
+			float myParT_dbar;
+			float myParT_g;
 			int myNumber;
 			int myMCPDG;
 			float myMCCharge;
